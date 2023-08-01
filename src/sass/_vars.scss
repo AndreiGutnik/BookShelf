@@ -1,0 +1,18 @@
+:root{
+	--color-violet: #4F2EE8;
+	--color-yellow: #EAC645;
+	--font-color-white: #ffffff;
+	--font-color-grey: #6c6c6c;
+}
+
+html.light {
+  --background-color: #ffffff;
+	--background-color1: #f6f6f6;
+	--font-color: #111111;
+}
+
+html.dark {
+  --background-color: #000000;
+	--background-color1: #202024;
+	--font-color: #ffffff;
+}
