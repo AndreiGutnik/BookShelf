@@ -1,7 +1,7 @@
 body {
     background-color: var(--background-color);
     color: var(--font-color);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans Regular', sans-serif;
 }
 
 .container {
@@ -20,19 +20,19 @@ body {
 	}
 }
 
-.is-hidden {
-	display: block;
-}
-
-// .visually-hidden {
-//   position: absolute;
-//   white-space: nowrap;
-//   width: 1px;
-//   height: 1px;
-//   overflow: hidden;
-//   border: 0;
-//   padding: 0;
-//   clip: rect(0 0 0 0);
-//   clip-path: inset(50%);
-//   margin: -1px;
+// .is-hidden {
+// 	display: block;
 // }
+
+.is-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
