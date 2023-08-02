@@ -1,6 +1,7 @@
-@import './common';
-@import './reset';
-@import './vars';
+@import './base/common';
+@import './base/reset';
+@import './base/variables';
+@import './base/base';
 
 
 
@@ -9,11 +10,3 @@
 
 
 
-
-
-
-@import './example';
-
-.is-hidden {
-	display: block;
-}
