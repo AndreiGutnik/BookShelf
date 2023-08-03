@@ -1,9 +1,11 @@
-.header {
-    position: relative;
-}
 
+
+.burger-menu-container{
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
+
+}
 .header-container{
-    // position: fixed;
+    position: absolute;
     border: 1.5px solid var(--font-color);
     border-radius: 0 0 8px 8px;
     align-items: center;
@@ -28,7 +30,7 @@
     line-height: 0;
     background-color: transparent;  
     margin-left: auto;
-//     transition: scale 250ms var(--action);
+    transition: scale 250ms var(--action);
  }
 .open-menu {
     stroke: var(--font-color);
@@ -48,30 +50,27 @@
     display: none;
 }
 .menu-container {
-    display: none;
-    // z-index: 1;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    // top: 0;
+    // left: 0;
     width: 100%;
-    height: 100vh;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
+    align-content: flex-start;
+    
     gap: 16px;
-    background-image: url('/src/images/books.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-     &.is-open{
-        display: block;
-     }
+    padding-top: 247px;
+    align-items: center;
+    // padding-left: 128px;
+    // padding-right: 128px;
+    //  &.is-open{
+    //     display: block;
+    //  }
     }
 
 .home-link{
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     width: 72px;
     height: 34px;
     font-style: normal;
@@ -83,10 +82,11 @@
     border-radius: 36px;
     padding: 8px 16px;
     color: var(--font-color);
-    border: 1px solid transparent;
+    border: 1px solid var(--font-color);
     text-transform: uppercase;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .home-link:hover,
@@ -95,7 +95,8 @@
     transform: scale(1.05);
 }
 .shoping-link{
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -104,6 +105,7 @@
     color: var(--font-color-white);
     text-transform: uppercase;
     transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .shoping-link:hover,
 .shoping-link:focus {
@@ -111,8 +113,5 @@
 }
 .bag-icon{
     fill: var(--font-color-white);
-}
-.shoping-link{
-    display: flex;
-    gap: 4px;
+    margin-left: 4px;
 }
