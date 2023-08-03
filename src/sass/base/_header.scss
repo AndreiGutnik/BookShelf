@@ -1,0 +1,118 @@
+.header {
+    position: relative;
+}
+
+.header-container{
+    // position: fixed;
+    border: 1.5px solid var(--font-color);
+    border-radius: 0 0 8px 8px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex; 
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.header-nav{
+    display: flex;
+    align-items: center;
+}
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.menu-btn {
+    display: inline-flex;
+    border: none;
+    padding: 0;
+    line-height: 0;
+    background-color: transparent;  
+    margin-left: auto;
+//     transition: scale 250ms var(--action);
+ }
+.open-menu {
+    stroke: var(--font-color);
+}
+// .menu-btn.is-open .open-menu:hover,
+// .menu-btn.is-open .open-menu:focus{
+//     transform: scale(1.2);
+//     stroke: var(--font-color-violet);
+// }
+.menu-btn .icon-close {
+    display: none;
+}
+.menu-btn.is-open .icon-close {
+    display: block;
+}
+.menu-btn.is-open .icon-burger {
+    display: none;
+}
+.menu-container {
+    display: none;
+    // z-index: 1;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
+    gap: 16px;
+    background-image: url('/src/images/books.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+     &.is-open{
+        display: block;
+     }
+    }
+
+.home-link{
+    display: inline-block;
+    width: 72px;
+    height: 34px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    background-color: var(--font-color-yellow);
+    border-radius: 36px;
+    padding: 8px 16px;
+    color: var(--font-color);
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-link:hover,
+.home-link:focus {
+    border-color: var(--font-color-white);
+    transform: scale(1.05);
+}
+.shoping-link{
+    display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: var(--font-color-white);
+    text-transform: uppercase;
+    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.shoping-link:hover,
+.shoping-link:focus {
+    transform: scale(1.05);
+}
+.bag-icon{
+    fill: var(--font-color-white);
+}
+.shoping-link{
+    display: flex;
+    gap: 4px;
+}
