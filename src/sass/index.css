@@ -177,4 +177,14 @@ body {
 .category__item:hover, .category__title:hover {
   font-weight: 700;
   color: var(--font-color-violet);
+}
+
+body.dark .category__item,
+.category__title {
+  color: rgba(255, 255, 255, 0.6);
+}
+body.dark .category__item:hover, body.dark .category__item:focus,
+.category__title:hover,
+.category__title:focus {
+  color: rgb(234, 198, 69);
 }/*# sourceMappingURL=index.css.map */
