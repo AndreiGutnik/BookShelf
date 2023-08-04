@@ -15,8 +15,8 @@ export default class BooksService {
     this.totalBooks = 0;
   }
 
-	async getCategoryList() {
-		const { data } = await axios.get(`${BASE_URL}${END_POINT_CATEGORY_LIST}`);
+  async getCategoryList() {
+    const { data } = await axios.get(`${BASE_URL}${END_POINT_CATEGORY_LIST}`);
     return data;
 	}
 

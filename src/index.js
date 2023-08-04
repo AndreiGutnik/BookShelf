@@ -4,6 +4,8 @@ import refs from './js/refs';
 import BooksService from './js/BooksService';
 import LoadMoreBtn from './js/LoadMoreBtn';
 import markupImages from './js/markup';
+import BooksService from './js/components/category';
+
 
 const { } = refs;
 
