@@ -15,13 +15,9 @@ function onScroll() {
 }
 
 function onClick() {
-	// if (window.pageYOffset > 0) {
-  //   window.scrollBy(0, -50);
-  //   setTimeout(onClick, 0);
-  // }
-  // window.scrollTo({
-  //   top: 0,
-  //   left: 0,
-  //   behavior: 'smooth',
-  // });
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
 }
