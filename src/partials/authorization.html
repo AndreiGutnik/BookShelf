@@ -1,0 +1,63 @@
+<section class="auth">
+  <button data-modal-open class="authorization-button" type="button">
+    Sign up
+    <svg class="authorization-button-icon" width="20" height="20">
+      <use href="/src/images/icons.svg#arrow-narrow"></use>
+    </svg>
+  </button>
+  <div class="backdrop-auth is-hidden" data-modal>
+    <div class="modal-auth">
+      <button class="modal-button-auth-close" type="button" data-modal-close>
+        <svg class="modal-button-auth-close-icon">
+          <use href="/src/images/icons.svg#x-close"></use>
+        </svg>
+      </button>
+      <form class="modal-form-auth" autocomplete="off">
+        <div class="modal-form-auth-field">
+          <div class="pos-auth">
+            <input
+              type="text"
+              class="modal-form-auth-field-input"
+              name="name"
+              id="name"
+              placeholder="Name"
+            />
+          </div>
+        </div>
+        <div class="modal-form-auth-field">
+          <div class="pos-auth">
+            <input
+              type="email"
+              class="modal-form-auth-field-input"
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
+            <svg class="modal-form-auth-field-icon">
+              <use href="/src/images/icons.svg#mail"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="modal-form-auth-field">
+          <div class="pos-auth">
+            <input
+              type="password"
+              class="modal-form-auth-field-input"
+              name="password"
+              id="password"
+              placeholder="Password"
+            />
+            <svg class="modal-form-auth-field-icon">
+              <use href="/src/images/icons.svg#lock"></use>
+            </svg>
+          </div>
+        </div>
+        <button type="submit" class="sign-button-auth-submit">Sign up</button>
+        <div class="sign-buttons-auth">
+          <button type="submit" class="sign-button-auth">Sign up</button>
+          <button type="submit" class="sign-button-auth">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
