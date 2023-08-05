@@ -60,19 +60,19 @@
 }
 
 .mobile-menu {
-position: absolute;
-width: 100%;
-height: 100vh;
-top: 0;
-left: 0;
-z-index: 1000;
-background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
 }
 .mob-menu-container{
     padding-top: 247px;
     display: flex;
     flex-direction: column;
-    align-items: center;       
+    align-items: center;  
+    margin-bottom: 125px;
 }
 .current-color {
     background-color: var(--font-color-yellow);
@@ -126,7 +126,9 @@ background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color
     fill: var(--font-color);
     margin-left: 4px;
 }
-
+.book-menu{
+    width: 100%;
+}
 
 
 /////////////// CHECK-BOX  ///////////////
@@ -192,6 +194,8 @@ background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color
         }
     }
 }
+
+
 @media screen and (min-width: 768px) {
     .menu-btn{
         display: none;
