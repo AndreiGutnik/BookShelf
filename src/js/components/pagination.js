@@ -89,7 +89,6 @@ const options = {
 };
 
 
-const instance = new Pagination(paginationEl, options);
+// const instance = new Pagination(paginationEl, options);  создание пагинации
 // instance.setTotalItems(5);   установить количество страниц
 // instance.getCurrentPage();   получить текущую страницу
-
