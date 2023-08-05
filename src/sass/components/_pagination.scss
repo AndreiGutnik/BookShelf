@@ -1,0 +1,67 @@
+.tui-pagination {
+  display: flex;
+  justify-content: center;
+  font-family: 'DM Sans Bold', sans-serif;
+  font-size: 18px;
+	color: var(--font-color);
+}
+
+.tui-page-btn {
+  text-align: center;
+  width: 38px;
+  height: 38px;
+	background-color: transparent;
+  border: 1px solid var(--font-color);
+  border-radius: 50%;
+  padding: 11px 0;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+	@media screen and (min-width: 768px) {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.tui {
+  &-first-child,
+  &-next {
+    margin-left: 24px;
+  }
+}
+
+.tui-next,
+.tui-last,
+.tui-first,
+.tui-prev {
+  background-color: var(--color-yellow);
+  fill: #000000;
+	border-color: #111111;
+}
+
+.tui-is {
+  &-selected{
+		background-color: var(--font-color);
+		color: var(--background-color)
+	}
+  &-disabled {
+    background-color: #111111;
+    fill: var(--color-pagination-fill);
+  }
+}
+
+.paginations__icon {
+  pointer-events: none;
+}
+
+svg.paginations__icon {
+  width: 22px;
+  height: 22px;
+
+  @media screen and (min-width: 768px) {
+    width: 24px;
+    height: 24px;
+  }
+}
