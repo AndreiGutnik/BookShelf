@@ -28,13 +28,13 @@
   closeBtn.addEventListener('click', closeMenu);
 
    function openMenu() {
-     mobileMenu.classList.remove('hidden');
+     mobileMenu.classList.remove('is-hidden');
      header.style.display = 'none';;
     
   }
 
   function closeMenu() {
-    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.add('is-hidden');
      header.style.display = 'block';
 
   }

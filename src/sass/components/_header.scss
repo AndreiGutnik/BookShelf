@@ -1,6 +1,5 @@
 .header{
     width: 100%;
-    
 }
 .header-container{
     position: relative;
@@ -43,17 +42,22 @@
     transform: scale(1.2);
     stroke: var(--font-color-violet);
 }
+.menu-btn-close{
+    display: inline-flex;
+    border: none;
+    padding: 0;
+    line-height: 0;
+    background-color: transparent;
+    margin-left: auto;
+    transition: scale 250ms var(--action);
+}
 .close-menu{
     stroke: var(--font-color);
-    display: none;
 }
-.menu-btn .close-menu:hover,
-.menu-btn .close-menu:focus {
+.menu-btn-close .close-menu:hover,
+.menu-btn-close .close-menu:focus {
     transform: scale(1.2);
     stroke: var(--font-color-violet);
-}
-.hidden{
-    display: none;
 }
 .menu-container{
     display: none;
@@ -129,7 +133,6 @@
 .book-menu{
     width: 100%;
 }
-
 
 /////////////// CHECK-BOX  ///////////////
 .block-btn {
