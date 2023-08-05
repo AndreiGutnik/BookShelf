@@ -1,7 +1,6 @@
-.header{
-    width: 100%;
-}
+
 .header-container{
+    z-index: 1;
     position: relative;
     width: auto; 
     background-color: var(--background-color);
@@ -32,7 +31,7 @@
     line-height: 0;
     background-color: transparent;  
     margin-left: auto;
-    transition: scale 250ms var(--action);
+    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 .open-menu {
     stroke: var(--font-color);
@@ -42,20 +41,11 @@
     transform: scale(1.2);
     stroke: var(--font-color-violet);
 }
-.menu-btn-close{
-    display: inline-flex;
-    border: none;
-    padding: 0;
-    line-height: 0;
-    background-color: transparent;
-    margin-left: auto;
-    transition: scale 250ms var(--action);
-}
 .close-menu{
     stroke: var(--font-color);
 }
-.menu-btn-close .close-menu:hover,
-.menu-btn-close .close-menu:focus {
+.menu-btn .close-menu:hover,
+.menu-btn .close-menu:focus {
     transform: scale(1.2);
     stroke: var(--font-color-violet);
 }
@@ -64,20 +54,26 @@
 }
 
 .mobile-menu {
+    z-index: 0;
     position: absolute;
     width: 100%;
+    height:100%;
     top: 0;
     left: 0;
-    z-index: 1000;
-    background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
-}
-.mob-menu-container{
     padding-top: 247px;
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
     margin-bottom: 125px;
+    background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
 }
+// .menu-container{
+//     padding-top: 247px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;  
+//     margin-bottom: 125px;
+// }
 .current-color {
     background-color: var(--font-color-yellow);
     border-radius: 36px;
@@ -224,3 +220,6 @@
         justify-content: space-between;
     }
 }
+
+
+

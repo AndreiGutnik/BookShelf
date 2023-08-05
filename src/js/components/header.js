@@ -1,43 +1,26 @@
-// const burgerBtn = document.querySelector('.js-burger');
-// const iconClose = burgerBtn.querySelector('.close-menu');
-// const iconBurger = burgerBtn.querySelector('.open-menu');
-// const mobileMenu = document.querySelector('.mobile-menu');
+const burgerBtn = document.querySelector('.js-burger');
+const iconClose = burgerBtn.querySelector('.close-menu');
+const iconBurger = burgerBtn.querySelector('.open-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
 
-// let isOpen = true;
-// burgerBtn.addEventListener('click', handlerChangeBtnMenu);
+let isOpen = true;
 
-// function handlerChangeBtnMenu() {
-//         isOpen = !isOpen;
-//         if (isOpen) {
-//             iconClose.style.display = 'block';
-//             iconBurger.style.display = 'none';
-//             mobileMenu.classList.remove('hidden');
+burgerBtn.addEventListener('click', handlerChangeBtnMenu);
+
+function handlerChangeBtnMenu() {
+        isOpen = !isOpen;
+        if (isOpen) {
+          iconClose.classList.remove('is-hidden');
+          iconBurger.classList.add('is-hidden'); 
+          mobileMenu.classList.remove('is-hidden');
              
-//         } else {
-//             iconClose.style.display = 'none';
-//             iconBurger.style.display = 'block';
-//             mobileMenu.classList.add('hidden'); 
-//         }
-//     }
-  const burgerBtn = document.querySelector('.js-burger-open');
-  const closeBtn = document.querySelector('.js-close');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const header = document.querySelector('.js-header');
-  
-  burgerBtn.addEventListener('click', openMenu);
-  closeBtn.addEventListener('click', closeMenu);
+        } else {
+            iconClose.classList.add('is-hidden');
+            iconBurger.classList.remove('is-hidden');
+            mobileMenu.classList.add('is-hidden'); 
+        }
+    }
 
-   function openMenu() {
-     mobileMenu.classList.remove('is-hidden');
-     header.style.display = 'none';;
-    
-  }
-
-  function closeMenu() {
-    mobileMenu.classList.add('is-hidden');
-     header.style.display = 'block';
-
-  }
 
 // const homeLink = document.querySelector('.home-link');
 // const shoppingLink = document.querySelector('.shoping-link');
@@ -61,7 +44,7 @@
 //   }
 // });
 
-////////////////////КНОПКА ПЕРЕМИКАЧ /////  ВІКТОРІЯ////////////////////////
+//////////////////КНОПКА ПЕРЕМИКАЧ /////  ВІКТОРІЯ////////////////////////
 const checkTheme = document.querySelector('.check-theme');
 checkTheme.addEventListener('click', () => {
   if (localStorage.getItem('theme') === 'dark') {
@@ -82,3 +65,9 @@ function addDarkClassHtml() {
   } catch (err) { }
 }
 addDarkClassHtml();
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="header-container container js-header">
+  <div class="header-container container">
     <nav class="header-nav">
       <a class="logo-header" href="./index.html">
         <svg class="logo-icon" width="24" height="24">
@@ -9,75 +9,36 @@
           <use href="./images/icons.svg#logo-text"></use>
         </svg>
       </a>
-      <div class="menu-container">
-        <a class="home-link current-color" href="./index.html">Home</a>
-        <a class="shoping-link" href="#"
-          >Shopping list
-          <svg class="bag-icon" width="20" height="20">
-            <use href="/src/images/icons.svg#bag"></use>
-          </svg>
-        </a>
-      </div>
+      <ul class="menu-container">
+        <li>
+          <a class="home-link current-color" href="./index.html">Home</a>
+        </li>
+        <li>
+          <a class="shoping-link" href="#"
+            >Shopping list
+            <svg class="bag-icon" width="20" height="20">
+              <use href="/src/images/icons.svg#bag"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </nav>
     <div class="block-btn">
       <input class="check-theme is-hidden" type="checkbox" id="switch-theme" />
       <label for="switch-theme" class="check-text" title="Switch theme"></label>
-      <button type="button" class="menu-btn js-burger-open">
-        <svg
-          class="open-menu"
-          width="28"
-          height="28"
-          aria-label="open mobile menu"
-        >
-          <use href="./images/icons.svg#burger"></use>
+      <button type="button" class="menu-btn js-burger">
+        <svg width="28" height="28" aria-label="toggle mobile menu">
+          <use class="open-menu" href="./images/icons.svg#burger"></use>
+          <use
+            class="close-menu is-hidden"
+            href="./images/icons.svg#x-close"
+          ></use>
         </svg>
-        <!-- <svg
-          class="close-menu hidden"
-          width="28"
-          height="28"
-          aria-label="close mobile menu"
-        >
-          <use href="./images/icons.svg#x-close"></use>
-        </svg> -->
       </button>
     </div>
   </div>
   <div class="mobile-menu is-hidden">
-    <div class="header-container container">
-      <nav class="header-nav">
-        <a class="logo-header" href="./index.html">
-          <svg class="logo-icon" width="24" height="24">
-            <use href="/src/images/icons.svg#logo"></use>
-          </svg>
-          <svg class="logo-bookshelf" width="77" height="14">
-            <use href="./images/icons.svg#logo-text"></use>
-          </svg>
-        </a>
-      </nav>
-      <div class="block-btn">
-        <input
-          class="check-theme is-hidden"
-          type="checkbox"
-          id="switch-theme"
-        />
-        <label
-          for="switch-theme"
-          class="check-text"
-          title="Switch theme"
-        ></label>
-        <button type="button" class="menu-btn-close js-close">
-          <svg
-            class="close-menu"
-            width="28"
-            height="28"
-            aria-label="close mobile menu"
-          >
-            <use href="./images/icons.svg#x-close"></use>
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div class="mob-menu-container">
+    <!-- <div class="mob-menu-container">
       <a class="mob-home-link home-link current-color" href="./index.html"
         >Home</a
       >
@@ -87,7 +48,7 @@
           <use href="/src/images/icons.svg#bag"></use>
         </svg>
       </a>
-    </div>
+    </div> -->
     <img class="book-menu" src="/src/images/books.png" alt="book" />
   </div>
 </header>
