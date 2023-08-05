@@ -1,4 +1,4 @@
-const mainBody = document.body;
+
 const checkTheme = document.querySelector('.check-theme');
 checkTheme.addEventListener('click', () => {
   if (localStorage.getItem('theme') === 'dark') {
