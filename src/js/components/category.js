@@ -1,37 +1,28 @@
 import BooksService from "../BooksService";
+import createCategoryList from "../markup";
+import refs from "../refs"
+import Notiflix from 'notiflix';
+
+const { categoryListEl } = refs;
 
 const booksService = new BooksService();
 
-const elements = {
-    categoryListEl: document.querySelector(".category__list")
-}
+document.addEventListener("DOMContentLoaded", fetchCategoryList);
 
-booksService.getCategoryList()
-    .then(response => {
-        return response;
-        }
-    )
-    .then(data => elements.categoryListEl.innerHTML = createCategoryList(data))
-    //не відловлює
-    .catch (serviceError);
-
-
-    //Функції
-
-function createCategoryList(arr) {
-    return arr.map(({ list_name }) =>
-        ` <li class="category__item">${list_name}
-            </li>`).join("");
+async function fetchCategoryList() { 
+    try {
+        const response = await booksService.getCategoryList();
+        const categoryListMarkup = await createCategoryList(response);
+        categoryListEl.insertAdjacentHTML("beforeend", categoryListMarkup);
+        categoryListEl.firstElementChild.classList.add("active");
+        
+    } catch (error) {
     
-}
-
-//поки не працює((()))
-function serviceError(err) { 
-    Notify.failure('Oops!. Something wrong! Please try again later.', {
-            position: 'top',
-            timeout: 3000,
-        })
-}
+         Notiflix.Notify.failure(`Sorry, ${error.message}`);
+        
+    }
+   
+}  
 
 
-
+ 
