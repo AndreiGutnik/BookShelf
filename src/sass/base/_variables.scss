@@ -12,6 +12,7 @@ body.light {
 	--background-color1: #f6f6f6;
 	--font-color: #111111;
 	--background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+  --color-pagination-fill: #B4AFAF;
 }
 
 body.dark {
@@ -19,4 +20,5 @@ body.dark {
 	--background-color1: #202024;
 	--font-color: #ffffff;
 	--background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  --color-pagination-fill: #FFFFFF;
 }

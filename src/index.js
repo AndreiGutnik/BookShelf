@@ -1,20 +1,11 @@
-import Notiflix from 'notiflix';
-
-import refs from './js/refs';
-import BooksService from './js/BooksService';
-import LoadMoreBtn from './js/LoadMoreBtn';
-import markupImages from './js/markup';
-import switchThems from './js/switchThems';
-
-const { } = refs;
+// import './js/components/header.js';
 
 
 
 
 
 
-function onError(err) {
-  // loadMoreBtn.hide();
-  Notiflix.Notify.failure(`📌 ${err}`);
-}
+
+
+
 
