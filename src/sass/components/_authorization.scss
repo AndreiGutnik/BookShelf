@@ -4,6 +4,52 @@
   pointer-events: none;
 }
 
+.authorization-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  padding: 4px 12px;
+  width: 184px;
+  height: 45px;
+  gap: 19px;
+
+  border-radius: 36px;
+  border-color: transparent;
+  background-color: var(--color-violet);
+
+  color: var(--font-color-white);
+}
+
+.user-auth {
+  &-is {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  &-none {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+  }
+  &-name {
+    color: #fff;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.44px;
+  }
+  &-undef {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.56px;
+  }
+}
+
 .backdrop-auth {
   position: fixed;
   width: 100vw;
@@ -202,27 +248,6 @@
       -moz-box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.75) inset;
     }
   }
-}
-
-.authorization-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px auto;
-  padding: 14px;
-  width: 184px;
-  height: 48px;
-
-  border-radius: 18px;
-  border: 1.5px solid #111;
-  background-color: var(--color-violet);
-
-  color: var(--font-color-white);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: -0.56px;
 }
 
 // ===============================================================

@@ -8,6 +8,12 @@ const {
   inputAuthEmail,
   inputAuthPassword,
   submitAuthbutton,
+  submitBtn,
+  signUp,
+  signIn,
+  userIs,
+  userNone,
+  modal,
 } = refs;
 
 const KEY_AUTH_IN_STORAGE = 'authorization-form-state';
@@ -51,14 +57,19 @@ function onClickAuthSubmit(event) {
   );
   if (!dataAuthInStorage || !dataAuthInStorage.name || !dataAuthInStorage.email)
     return;
+
   console.log(dataAuthInStorage);
+
   arrayDataAuthStorage.push(dataAuthInStorage);
   localStorage.setItem(
     KEY_ARRAY_AUTH_IN_STORAGE,
     JSON.stringify(dataAuthInStorage)
   );
+  userIs.classList.remove('is-hidden');
+  userNone.classList.add('is-hidden');
   event.target.reset();
   localStorage.removeItem(KEY_AUTH_IN_STORAGE);
+  refs.modal.classList.toggle('is-hidden');
 }
 
 (() => {
@@ -75,6 +86,13 @@ function onClickAuthSubmit(event) {
     refs.modal.classList.toggle('is-hidden');
   }
 })();
+
+signUp.addEventListener('click', () => {
+  if (submitBtn.textContent !== 'Sign In') submitBtn.textContent = 'Sign up';
+});
+signIn.addEventListener('click', () => {
+  if (submitBtn.textContent !== 'Sign Up') submitBtn.textContent = 'Sign in';
+});
 
 // function onClickAuthSubmit(evt) {
 //   evt.preventDefault();
