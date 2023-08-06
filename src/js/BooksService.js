@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = `https://books-backend.p.goit.global/books/`;
 
-const END_POINT_CATEGORY_LIST = 'category-list12';
+const END_POINT_CATEGORY_LIST = 'category-list';
 const END_POINT_TOP = 'top-books';
 const END_POINT_BOOKSBYCATEGORY = 'category';
 
@@ -16,15 +16,10 @@ export default class BooksService {
     this.totalBooks = 0;
   }
   
-
+//try catch
   async getCategoryList() {
       const { data } = await axios.get(`${BASE_URL}${END_POINT_CATEGORY_LIST}`);
-      if (!data) { 
-        throw new Error("Помилка")
-      }
       return data;
-      
-      
   }
   
 
