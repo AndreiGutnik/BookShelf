@@ -22,7 +22,7 @@ async function fetchCategory() {
   const category = await bookService.getBooksByCategory();
   // const topBooks = await bookService.getTopBooks();
   // console.log(topBooks);
-  const markup = createMarkupByCategory(category);
+  const markup = createMarkup(category);
   categoryChoice.insertAdjacentHTML('beforeend', markup);
 } catch (err) {
   onError(err);
