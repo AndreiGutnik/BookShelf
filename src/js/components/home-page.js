@@ -1,6 +1,6 @@
 import BooksService from '../BooksService';
 import LoadMoreBtn from '../LoadMoreBtn';
-import { createMarkup,
+import { createMarkupByCategory,
    createMarkupTop } from '../markup';
 import refs from '../refs';
 import onError from '../error';
@@ -22,7 +22,7 @@ async function fetchCategory() {
   const category = await bookService.getBooksByCategory();
   // const topBooks = await bookService.getTopBooks();
   // console.log(topBooks);
-  const markup = createMarkup(category);
+  const markup = createMarkupByCategory(category);
   categoryChoice.insertAdjacentHTML('beforeend', markup);
 } catch (err) {
   onError(err);
