@@ -23,6 +23,8 @@ async function fetchCategoryList() {
     }
    
 }  
+console.log(booksService.getCategoryList())
+
 
 
  
