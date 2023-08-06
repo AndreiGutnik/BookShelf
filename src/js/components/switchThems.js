@@ -17,7 +17,7 @@ function addDarkClassHtml() {
     else {
       document.querySelector('body').classList.remove('dark');
     }
-  } catch (err) { }
+  } catch { }
 }
 
 addDarkClassHtml();
