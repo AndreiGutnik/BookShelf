@@ -1,19 +1,14 @@
-
 import BooksService from '../BooksService';
 import LoadMoreBtn from '../LoadMoreBtn';
-import createMarkupTop from '../markup';
-import createMarkup from '../markup';
-import createMarkupByCategory from '../markup'
+import { createMarkup, createMarkupTop } from '../markup';
 import refs from '../refs';
 import onError from '../error';
 
 const { categoryChoice, bookList, bookList0, loadMore } = refs;
 
-
 const categoryService = new BooksService();
-    const bookService = new BooksService();
-    const loadMoreBtn = new LoadMoreBtn(loadMore);
-
+const bookService = new BooksService();
+const loadMoreBtn = new LoadMoreBtn({ selector: '.load-more' });
 
 
 
@@ -25,14 +20,14 @@ bookService.getBooksByCategory()
   .catch(onError);
 
 
-LoadMoreBtn.button.addEventListener('click', () => {
-  LoadMoreBtn.disable();
-  book.resetPage();
+loadMoreBtn.button.addEventListener('click', () => {
+  loadMoreBtn.disable();
+  bookService.resetPage();
 
-  book.getTopBooks()
+  bookService.getTopBooks()
     .then(data => {
       bookList0.innerHTML = createMarkupTop(data);
-      LoadMoreBtn.enable();
+      loadMoreBtn.enable();
     })
     .catch(onError);
 });
