@@ -20,12 +20,15 @@ async function fetchCategory() {
  bookService.selectedCategory = 'Hardcover Fiction';
  try {
   const category = await bookService.getBooksByCategory();
-const markup = createMarkupByCategory(category);
-categoryChoice.insertAdjacentHTML('beforeend', markup);
+  // const topBooks = await bookService.getTopBooks();
+  // console.log(topBooks);
+  const markup = createMarkupByCategory(category);
+  categoryChoice.insertAdjacentHTML('beforeend', markup);
 } catch (err) {
-onError(err);
+  onError(err);
 }
 }
+
 
 
 loadMoreBtn.button.addEventListener('click', () => {
@@ -39,4 +42,3 @@ loadMoreBtn.button.addEventListener('click', () => {
     })
     .catch(onError);
 });
-loadMoreBtn.show();
