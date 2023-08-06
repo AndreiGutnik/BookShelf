@@ -2,6 +2,8 @@ import Notiflix from 'notiflix';
 import BooksService from '../BooksService';
 import LoadMoreBtn from '../LoadMoreBtn';
 import createMarkupTop from '../markup';
+import createMarkup from '../markup';
+import createMarkup from '../markup';
 import refs from '../refs';
 const { bookList, bookList0, LoadMoreBtn} = refs;
 

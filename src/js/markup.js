@@ -1,4 +1,4 @@
-
+export default
   function createMarkup(arr) {
     return arr
       .map(({ list_name }) =>
@@ -9,7 +9,7 @@
       .join('');
   }
 
-  
+  export default
   function createMarkupByCategory(arr) {
     return arr
       .map(({ list_name, book_image, title, author, amazon_product_url }) => `<li class="book-list-item">
@@ -22,6 +22,7 @@
         </li>`)
       .join('');
   }
+  export default
   function createMarkupTop(arr) {
     return arr
       .map(({ books: [list_name] }) =>
