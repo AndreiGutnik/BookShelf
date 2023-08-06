@@ -1,23 +1,31 @@
 import BooksService from '../BooksService';
 import LoadMoreBtn from '../LoadMoreBtn';
-import { createMarkup, createMarkupTop } from '../markup';
+import { createMarkup,
+   createMarkupTop } from '../markup';
 import refs from '../refs';
 import onError from '../error';
 
 const { categoryChoice, bookList, bookList0, loadMore } = refs;
 
-const categoryService = new BooksService();
+
 const bookService = new BooksService();
-const loadMoreBtn = new LoadMoreBtn({ selector: '.load-more' });
+const loadMoreBtn = new LoadMoreBtn({
+  selector: '.load-more',
+  isHidden: true,
+});
 
+fetchCategory();
 
-
-  bookService.selectedCategory = 'Combined Print and E-Book Fiction';
-bookService.getBooksByCategory()
-  .then(data => {
-    bookList0.insertAdjacentHTML('beforeend', createMarkupByCategory(data));
-  })
-  .catch(onError);
+async function fetchCategory() {
+ bookService.selectedCategory = 'Hardcover Fiction';
+ try {
+  const category = await bookService.getBooksByCategory();
+const markup = createMarkupByCategory(category);
+categoryChoice.insertAdjacentHTML('beforeend', markup);
+} catch (err) {
+onError(err);
+}
+}
 
 
 loadMoreBtn.button.addEventListener('click', () => {
@@ -31,3 +39,4 @@ loadMoreBtn.button.addEventListener('click', () => {
     })
     .catch(onError);
 });
+loadMoreBtn.show();
