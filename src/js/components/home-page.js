@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 import BooksService from '../BooksService';
 import LoadMoreBtn from '../LoadMoreBtn';
 
-const { bookList, bookList0, loadMore} = refs;
+const { bookList, bookList0, LoadMore} = refs;
 
 const categoryService = new BooksService();
     const bookService = new BooksService();
@@ -27,14 +27,14 @@ bookService.getBooksByCategory()
   .catch(onError);
 
 
-loadMoreBtn.button.addEventListener('click', () => {
-  loadMoreBtn.disable();
+LoadMoreBtn.button.addEventListener('click', () => {
+  LoadMoreBtn.disable();
   book.resetPage();
 
   book.getTopBooks()
     .then(data => {
       bookList0.innerHTML = createMarkupTop(data);
-      loadMoreBtn.enable();
+      LoadMoreBtn.enable();
     })
     .catch(onError);
 });
