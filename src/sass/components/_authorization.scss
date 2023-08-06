@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
 
-  background-color: #4f2ee8;
+  background-color: var(--color-violet);
 
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,10 +32,10 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  background-color: #f6f6f6;
+  background-color: var(--background-color1);
 
   border-radius: 18px;
-  border: 2px solid #111;
+  border: 2px solid var(--border-color);
 
   transition: transform;
   transition-duration: 250ms;
@@ -53,16 +53,19 @@
   outline: none;
   &:focus {
     & .modal-button-auth-close-icon {
-      stroke: #4f2ee8;
+      stroke: var(--font-color-violet);
     }
   }
   &-icon {
     width: 20px;
     height: 20px;
-    stroke: #111111;
+
+    stroke: var(--font-color);
+    background-color: var(--background-color1);
+
     transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
-      stroke: #4f2ee8;
+      stroke: var(--font-color-violet);
     }
   }
 }
@@ -78,8 +81,8 @@
     width: 18px;
     height: 18px;
 
-    stroke: #111111;
-    fill: #f6f6f6;
+    stroke: var(--font-color);
+    fill: var(--background-color1);
 
     transform: translateY(-50%);
     transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -91,14 +94,15 @@
     display: flex;
     width: 293px;
     height: 50px;
-    padding: 16px 173px 16px 24px;
+    padding: 16px 50px 16px 24px;
     align-items: center;
     gap: 10px;
 
     border-radius: 40px;
-    border: 2px solid #111;
+    border: 2px solid var(--border-color);
     outline: transparent;
-    color: #111;
+    color: var(--text-color-auth-form);
+    background-color: var(--background-color-auth-form);
 
     font-size: 16px;
     font-style: normal;
@@ -109,7 +113,7 @@
 
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &::placeholder {
-      color: #111111;
+      color: var(--text-color-auth-form);
 
       font-size: 16px;
       font-style: normal;
@@ -124,52 +128,22 @@
 }
 
 .modal-form-auth-field-input:hover .modal-form-auth-field-icon {
-  stroke: #4f2ee8;
+  stroke: var(--font-color-violet);
 }
 .modal-form-auth-field-input:is(:hover, :focus)::placeholder {
-  color: #4f2ee8;
+  color: var(--font-color-violet);
 }
 
 .modal-form-auth-field-input:is(:hover, :focus) {
-  border-color: #4f2ee8;
+  border-color: var(--font-color-violet);
 }
 
 .modal-form-auth .pos-auth:focus-within > .modal-form-auth-field-icon {
-  stroke: #4f2ee8;
+  stroke: var(--font-color-violet);
 }
 
 .modal-form-auth .pos-auth {
   position: relative;
-}
-
-.sign-button-auth-submit {
-  display: flex;
-  margin-top: 24px;
-  width: 294px;
-  height: 50px;
-  padding: 14px 112px;
-  border-radius: 40px;
-  background-color: #111;
-  color: #f3f3f3;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.16px;
-  text-transform: uppercase;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:is(:hover, :focus) {
-    color: #aaaaaa;
-  }
-  &:active {
-    background-color: #333333;
-    color: #f3f3f3;
-    box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.75) inset;
-    -webkit-box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.75) inset;
-    -moz-box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.75) inset;
-  }
 }
 
 .sign-buttons-auth {
@@ -180,7 +154,8 @@
 }
 
 .sign-button-auth {
-  color: rgba(17, 17, 17, 0.5);
+  color: var(--text-buttons-submit);
+  background-color: var(--background-color-auth-form);
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -190,9 +165,42 @@
   border: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:is(:hover, :focus) {
-    color: #4f2ee8;
+    color: var(--font-color-violet);
     text-decoration-line: underline;
     outline: transparent;
+  }
+  &-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    width: 294px;
+    height: 50px;
+    padding: 14px 112px;
+    border-radius: 40px;
+    color: var(--text-color-submit);
+    background-color: var(--background-color-submit);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:is(:hover, :focus) {
+      color: #aaaaaa;
+    }
+    &:active {
+      font-size: 15px;
+      background-color: var(--background-color-submit-active);
+      color: var(--text-color-submit);
+      box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.75) inset;
+      -webkit-box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.75) inset;
+      -moz-box-shadow: 0px 0px 26px 1px rgba(0, 0, 0, 0.75) inset;
+    }
   }
 }
 
@@ -207,12 +215,77 @@
 
   border-radius: 18px;
   border: 1.5px solid #111;
-  background: #4f2ee8;
+  background-color: var(--color-violet);
 
-  color: #fff;
+  color: var(--font-color-white);
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -0.56px;
+}
+
+// ===============================================================
+
+@media screen and (min-width: 1440px) {
+  .modal-auth {
+    width: 579px;
+    height: 516px;
+    padding: 80px 40px 40px;
+  }
+  .modal-button-auth-close {
+    top: 31px;
+    right: 31px;
+    width: 28px;
+    height: 28px;
+    &-icon {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .modal-form-auth-field {
+    & + .modal-form-auth-field {
+      margin-top: 28px;
+    }
+    &-input {
+      display: flex;
+      width: 499px;
+      height: 64px;
+      padding: 20px 56px 20px 40px;
+
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -0.18px;
+      &::placeholder {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.18px;
+      }
+    }
+    &-icon {
+      right: 18px;
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .sign-button-auth-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 499px;
+    height: 64px;
+    padding: 20px 173px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.18px;
+  }
+  .sign-buttons-auth {
+    margin-top: 20px;
+  }
+  .sign-button-auth {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.18px;
+  }
 }

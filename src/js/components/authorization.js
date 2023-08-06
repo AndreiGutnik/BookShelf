@@ -2,30 +2,6 @@ const throttle = require('lodash.throttle');
 
 import refs from '../refs';
 
-// import { initializeApp } from 'firebase/app';
-// import {
-//   getAuth,
-//   createUserWithEmailAndPassword,
-//   signInWithEmailAndPassword,
-//   signOut,
-//   onAuthStateChanged,
-//   UserInfo,
-// } from 'firebase/auth';
-// import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
-
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyCLvX8-Phpq_8ryBF-_fTZiLcLcJvYg6Ps',
-//   authDomain: 'bookshelf-96ecb.firebaseapp.com',
-//   projectId: 'bookshelf-96ecb',
-//   storageBucket: 'bookshelf-96ecb.appspot.com',
-//   messagingSenderId: '83733055479',
-//   appId: '1:83733055479:web:3665918d4fcdd1c4d550f2',
-//   measurementId: 'G-F45EYV47FF',
-// };
-
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-
 const {
   formAuth,
   inputAuthLogin,
@@ -35,6 +11,8 @@ const {
 } = refs;
 
 const KEY_AUTH_IN_STORAGE = 'authorization-form-state';
+const KEY_ARRAY_AUTH_IN_STORAGE = 'array-authorization-client';
+const arrayDataAuthStorage = [];
 const dataAuthInStorage = {};
 
 checkAuthStorage();
@@ -74,13 +52,13 @@ function onClickAuthSubmit(event) {
   if (!dataAuthInStorage || !dataAuthInStorage.name || !dataAuthInStorage.email)
     return;
   console.log(dataAuthInStorage);
+  arrayDataAuthStorage.push(dataAuthInStorage);
+  localStorage.setItem(
+    KEY_ARRAY_AUTH_IN_STORAGE,
+    JSON.stringify(dataAuthInStorage)
+  );
   event.target.reset();
   localStorage.removeItem(KEY_AUTH_IN_STORAGE);
-}
-
-function onClickAuthSubmit(evt) {
-  evt.preventDefault();
-  createUserWithEmailAndPassword(auth, email, password);
 }
 
 (() => {
@@ -97,3 +75,31 @@ function onClickAuthSubmit(evt) {
     refs.modal.classList.toggle('is-hidden');
   }
 })();
+
+// function onClickAuthSubmit(evt) {
+//   evt.preventDefault();
+//   createUserWithEmailAndPassword(auth, email, password);
+// }
+// import { initializeApp } from 'firebase/app';
+// import {
+//   getAuth,
+//   createUserWithEmailAndPassword,
+//   signInWithEmailAndPassword,
+//   signOut,
+//   onAuthStateChanged,
+//   UserInfo,
+// } from 'firebase/auth';
+// import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyCLvX8-Phpq_8ryBF-_fTZiLcLcJvYg6Ps',
+//   authDomain: 'bookshelf-96ecb.firebaseapp.com',
+//   projectId: 'bookshelf-96ecb',
+//   storageBucket: 'bookshelf-96ecb.appspot.com',
+//   messagingSenderId: '83733055479',
+//   appId: '1:83733055479:web:3665918d4fcdd1c4d550f2',
+//   measurementId: 'G-F45EYV47FF',
+// };
+
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth(app);
