@@ -1,8 +1,9 @@
 import Notiflix from 'notiflix';
 import BooksService from '../BooksService';
 import LoadMoreBtn from '../LoadMoreBtn';
-
-const { bookList, bookList0, LoadMore} = refs;
+import createMarkupTop from '../markup';
+import refs from '../refs';
+const { bookList, bookList0, LoadMoreBtn} = refs;
 
 const categoryService = new BooksService();
     const bookService = new BooksService();
