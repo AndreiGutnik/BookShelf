@@ -94,11 +94,12 @@ signIn.addEventListener('click', () => {
   if (submitBtn.textContent !== 'Sign Up') submitBtn.textContent = 'Sign in';
 });
 
-// function onClickAuthSubmit(evt) {
-//   evt.preventDefault();
-//   createUserWithEmailAndPassword(auth, email, password);
-// }
-// import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
+
+function onClickAuthSubmit(evt) {
+  evt.preventDefault();
+  createUserWithEmailAndPassword(auth, email, password);
+}
 // import {
 //   getAuth,
 //   createUserWithEmailAndPassword,
@@ -109,15 +110,16 @@ signIn.addEventListener('click', () => {
 // } from 'firebase/auth';
 // import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyCLvX8-Phpq_8ryBF-_fTZiLcLcJvYg6Ps',
-//   authDomain: 'bookshelf-96ecb.firebaseapp.com',
-//   projectId: 'bookshelf-96ecb',
-//   storageBucket: 'bookshelf-96ecb.appspot.com',
-//   messagingSenderId: '83733055479',
-//   appId: '1:83733055479:web:3665918d4fcdd1c4d550f2',
-//   measurementId: 'G-F45EYV47FF',
-// };
+const firebaseConfig = {
+  apiKey: 'AIzaSyCLvX8-Phpq_8ryBF-_fTZiLcLcJvYg6Ps',
+  authDomain: 'bookshelf-96ecb.firebaseapp.com',
+  projectId: 'bookshelf-96ecb',
+  storageBucket: 'bookshelf-96ecb.appspot.com',
+  messagingSenderId: '83733055479',
+  appId: '1:83733055479:web:3665918d4fcdd1c4d550f2',
+  measurementId: 'G-F45EYV47FF',
+};
 
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+console.log(auth);
