@@ -1,3 +1,12 @@
 export default {
-switchThems: document.querySelector('.check-theme')
+  switchThems: document.querySelector('.check-theme'),
+
+
+
+
+
+
+  
+
+	scrollUp: document.querySelector('.scroll-up'),
 };
