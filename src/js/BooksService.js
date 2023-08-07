@@ -28,6 +28,7 @@ export default class BooksService {
 	async getBooksByCategory() {
 		const { data } = await axios.get(
       `${BASE_URL}${END_POINT_BOOKSBYCATEGORY}?category=${this.selectedCategory}`);
+    
     return data;
 	}
 

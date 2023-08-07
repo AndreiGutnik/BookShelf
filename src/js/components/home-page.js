@@ -36,7 +36,7 @@ loadMoreBtn.button.addEventListener('click', () => {
   loadMoreBtn.disable();
   bookService.resetPage();
 
-  bookService.g()
+  bookService.getTopBooks()
     .then(data => {
       bookList0.innerHTML = createMarkupByCategory(data);
       loadMoreBtn.enable();

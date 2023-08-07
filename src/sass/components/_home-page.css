@@ -43,10 +43,7 @@
        flex-wrap: wrap;
        gap: 20px;
      }
-     .thumb{
-      height: 485px;
-      width: 335px;
-     }
+  
      @media screen and (min-width: 768px){
      .thumb {
       height: 316px;
