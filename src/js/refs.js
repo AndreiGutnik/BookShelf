@@ -15,3 +15,11 @@ export default {
   userName: document.querySelector('.auth-logon-isuser-text'),
   userLogout: document.querySelector('.auth-logout'),
 };
+
+
+
+
+
+
+	scrollUp: document.querySelector('.scroll-up')
+};
