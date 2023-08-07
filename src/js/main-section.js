@@ -87,11 +87,11 @@ function markupBooks(array) {
 // Функция для начала работы страницы
 async function startPage() {
   // Отображаем индикатор загрузки
-  Loading.hourglass('Загрузка...', {
+  Loading.hourglass('Loading...', {
     messageColor: '#eac645',
     messageFontSize: '30px',
     svgSize: '100px',
-    svgColor: '#4f2ee8',
+    svgColor: '#eac645',
   });
 
   // Очищаем список книг и скрываем заголовки
