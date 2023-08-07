@@ -14,6 +14,7 @@ export default {
   userNone: document.querySelector('.auth-logon-noneuser-text'),
   userName: document.querySelector('.auth-logon-isuser-text'),
   userLogout: document.querySelector('.auth-logout'),
+  checkTheme: document.querySelector('.check-theme'),
 
   scrollUp: document.querySelector('.scroll-up'),
 
