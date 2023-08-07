@@ -138,6 +138,21 @@ function onClickAuthSubmit(evt) {
         // console.log(errorMessage);
         // ..
       });
+    onAuthStateChanged(auth, user => {
+      console.log(user);
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        const uid = user.uid;
+        console.log(uid);
+        // alert('User in');
+        // ...
+      } else {
+        // User is signed out
+        // alert('User out');
+        // ...
+      }
+    });
   }
   if (switchFromStorage === 'in') {
     signInWithEmailAndPassword(
@@ -165,14 +180,17 @@ function onClickAuthSubmit(evt) {
         onError(errorCode);
       });
     onAuthStateChanged(auth, user => {
+      console.log(user);
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
         console.log(uid);
+        alert('User in');
         // ...
       } else {
         // User is signed out
+        alert('User out');
         // ...
       }
     });
