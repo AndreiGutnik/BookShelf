@@ -39,15 +39,34 @@
         </svg>
       </button>
     </div>
-    <button type="button" class="btn-singup js-authorization">
-      <svg class="user-icon" width="37" height="37">
+    <div class="block-auth">
+      <button data-modal-open class="auth-logon" type="button">
+        <div class="auth-logon-noneuser">
+          <p class="auth-logon-noneuser-text">Sign up</p>
+          <svg class="auth-logon-icon" width="20" height="20">
+            <use href="/src/images/icons.svg#arrow-narrow"></use>
+          </svg>
+        </div>
+        <div class="auth-logon-isuser is-hidden">
+          <!-- <svg class="auth-logon-isuser-icon" width="37" height="37">
         <use href="/src/images/icons.svg#user"></use>
-      </svg>
-      Stephen
-      <svg class="caret-down-icon" width="23" height="26">
-        <use href="/src/images/icons.svg#caret-down"></use>
-      </svg>
-    </button>
+        <img src="/src/images/users/stephen.png" alt="Users photo" />
+      </svg> -->
+          <p class="auth-logon-isuser-text">User</p>
+          <svg class="auth-logon-icon" width="20" height="20">
+            <use href="/src/images/icons.svg#caret-down"></use>
+          </svg>
+        </div>
+      </button>
+      <button data-modal-open class="auth-logout is-hidden" type="button">
+        <div class="auth-logout-user">
+          <p class="auth-logout-user-text">Log out</p>
+          <svg class="auth-button-icon" width="20" height="20">
+            <use href="/src/images/icons.svg#arrow-narrow"></use>
+          </svg>
+        </div>
+      </button>
+    </div>
   </div>
   <div class="mobile-menu is-hidden">
     <div class="mob-menu container">
