@@ -6,13 +6,13 @@
     margin-top: 40px;
     margin-bottom: 40px;
 
-    // @include minW-Tablet {
-    //     margin-top: 100px;
-    // }
+    @include minW-Tablet {
+        margin-top: 100px;
+    }
 
-    // @include minW-Dt {
-    //     margin-top: 0px;
-    // }
+    @include minW-Dt {
+        margin-top: 0px;
+    }
 
 }
 
