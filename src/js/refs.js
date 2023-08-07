@@ -6,4 +6,11 @@ export default {
     singupBtn: document.querySelector('.js-authorization'),
     shoppingList: document.querySelector('.js-shopping-list'),
     homeLink: document.querySelector('.js-home-link')
+
+
+
+
+
+
+	scrollUp: document.querySelector('.scroll-up')
 };
