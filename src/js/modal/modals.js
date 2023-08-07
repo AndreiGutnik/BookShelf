@@ -1,14 +1,14 @@
 import { createModal } from './about-book-modal';
 // Змінити на клік по зображенням
 
-// const modal = document.querySelector('.modal');
+
 const registerModal = document.querySelector('.register-modal');
 const loginModal = document.querySelector('.login-modal');
 const idModal = document.querySelector('.about-book-modal');
 const closeModalBtn = document.querySelector('#modal-close');
 const fireBaseBackdrop = document.querySelector('.fire-base-backdrop');
 const idBackdropModal = document.querySelector('.js-backdrop-modal');
-// const allModal = document.querySelector('allModal')
+
 
 function openModalId() {
   idModal.classList.remove('is-hidden');
