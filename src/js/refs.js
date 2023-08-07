@@ -6,7 +6,7 @@ export default {
     singupBtn: document.querySelector('.js-authorization'),
     shoppingList: document.querySelector('.js-shopping-list'),
     homeLink: document.querySelector('.js-home-link'),
-  checkTheme: document.querySelector('.check-theme'),
+    checkTheme: document.querySelector('.check-theme'),
 
 
 
