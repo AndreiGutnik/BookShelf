@@ -1,14 +1,16 @@
 import refs from "../refs";
-const { checkTheme } = refs;
-// const checkTheme = document.querySelector('.check-theme');
-checkTheme.addEventListener('click', () => {
+const { switchThems } = refs;
+
+switchThems.addEventListener('click', onClick)
+
+function onClick() {
   if (localStorage.getItem('theme') === 'dark') {
     localStorage.removeItem('theme'); 
   } else {
     localStorage.setItem('theme', 'dark');
     }
     addDarkClassHtml()
-});
+};
 
 function addDarkClassHtml() {
     if (localStorage.getItem('theme') === 'dark') {
