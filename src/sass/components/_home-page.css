@@ -38,11 +38,7 @@
        letter-spacing: 0.42px;
        text-transform: uppercase;}  
    
-     .category-choice{
-       display: flex;
-       flex-wrap: wrap;
-       gap: 20px;
-     }
+    
   
      @media screen and (min-width: 768px){
      .thumb {
