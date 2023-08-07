@@ -3,10 +3,13 @@
 @import './base/variables';
 @import './base/fonts';
 @import './base/base';
-@import './base/variables';
+@import './homePage/mixins';
+
+
 
 
 // Index-Page styles
+@import "./homePage/container";
 @import "./homePage/category-set";
 @import "./homePage/books-list";
 

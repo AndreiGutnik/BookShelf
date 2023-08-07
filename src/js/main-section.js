@@ -45,7 +45,7 @@ function markupBooks(array) {
           // Определяем изображение-заглушку в зависимости от размера окна
           if (arr.length === 0) {
             placeholder = bigPlaceholder;
-            Notiflix.Notify.failure('Мы не нашли ни одной книги');
+            Notiflix.Notify.failure('We didnt find any book');
             if (window.innerWidth < 768) {
               placeholder = smallPlaceholder;
             } else if (window.innerWidth < 1280) {
@@ -57,11 +57,11 @@ function markupBooks(array) {
           return `
           <li class="book" id="${_id}">
             <div class="thumb">
-              <img loading="lazy" class="book-photo" src="${imgSrc}" alt="${title || 'Не найдено'}" />
+              <img loading="lazy" class="book-photo" src="${imgSrc}" alt="${title || 'Not found'}" />
             </div>
-            <h3 class="book-name">${title || 'Не найдено'}</h3>
-            <span class="book-author">${author || 'Автор неизвестен'}</span>
-            <div class="all-book-popup"> быстрый просмотр </div>
+            <h3 class="book-name">${title || 'Not found'}</h3>
+            <span class="book-author">${author || 'Unknown author'}</span>
+            <div class="all-book-popup"> quick view  </div>
           </li>`;
         })
         .join('');
@@ -74,7 +74,7 @@ function markupBooks(array) {
             <ul class="book-list">
               ${bestBooks}
             </ul>
-            <button class="btn-look" type="button" name="${arr.list_name}">Показать больше</button>
+            <button class="btn-look" type="button" name="${arr.list_name}">show more</button>
           </div> 
         </li> 
       `;
