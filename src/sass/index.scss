@@ -3,9 +3,12 @@
 @import './base/variables';
 @import './base/fonts';
 @import './base/base';
+@import './base/variables';
 
 
-
+// Index-Page styles
+@import "./homePage/category-set";
+@import "./homePage/books-list";
 
 
 

@@ -21,5 +21,52 @@ body.dark {
 	--font-color: #ffffff;
 	--background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
   --color-pagination-fill: #ffffff;
-  
 }
+  
+
+// minnikov  start scss 
+
+$primary-colour: #111111;
+$secondary-colour: #FFFFFF;
+$paragraph-colour: #B4AFAF;
+
+$main-brand-colour: #4f2ee8;
+$additional-brand-colour: #eac645;
+
+$main-background: #F6F6F6;
+$light-theme-background: #ffffff;
+$dark-theme-background: #111111;
+
+$modal-light-background: #f6f6f6;
+$modal-dark-background: #202024;
+
+$hover-light-theme: #4f2ee8;
+$hover-dark-theme: #eac645;
+
+$gradient: radial-gradient(183.6% 183.01% at 59.76% -23.42%,
+		#4f2ee8 18.03%,
+		#ffffff 100%);
+$shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+$icons-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+
+// breakpoints
+$phoneMax: 374.9px;
+$phoneMin: 375px;
+
+$tabletMax: 1023.9px;
+$tabletMin: 768px;
+
+$desktopMax: 1440px;
+$desktopMin: 1024px;
+
+// padding-container
+$paddingPhone: 20px;
+$paddingTablet: 32px;
+$paddingDt: 24px;
+
+// transition
+$cubic: cubic-bezier(0.4, 0, 0.2, 1);
+
+// minnikov  the end scss 
+
+
