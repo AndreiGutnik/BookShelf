@@ -1,5 +1,6 @@
 .header{
     width: 100%;
+    position: relative;
 }
 .header-container{
     position: relative;
@@ -236,7 +237,6 @@
         }
     }
 }
-
 
 @media screen and (min-width: 768px) {
     .header-container {

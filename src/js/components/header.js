@@ -1,5 +1,5 @@
 import refs from '../refs';
-const { burgerBtn, iconClose, iconBurger, mobileMenu } = refs;
+const { burgerBtn, iconClose, iconBurger, mobileMenu, shoppingList, homeLink} = refs;
 
 ///////////////////////////Перемикач кнопки бургер//////////////////////////////
 let isOpen = true;
@@ -20,25 +20,25 @@ function handlerChangeBtnMenu() {
 }
 //////////////////////Перемикач жовтого фону для меню навігації /////////////////////
 
-// homeLink.addEventListener('click', handlerChangeColor);
-// shoppingList.addEventListener('click', handlerChangeColor);
+homeLink.addEventListener('click', handlerChangeColor);
+shoppingList.addEventListener('click', handlerChangeColor);
 
-// function handlerChangeColor(evt) {
-//   const hasCurrentColorClass = evt.target.classList.contains('current-color');
-//   if (evt.target === homeLink) {
-//     if (!hasCurrentColorClass) {
-//       // Додаємо клас current-color, якщо його немає
-//       homeLink.classList.add('current-color');
-//       shoppingList.classList.remove('current-color');
-//     }
-//   } else if (evt.target === shoppingList) {
-//     if (!hasCurrentColorClass) {
-//       // Додаємо клас current-color, якщо його немає
-//       shoppingList.classList.add('current-color');
-//       homeLink.classList.remove('current-color');
-//     }
-//   }
-// }
+function handlerChangeColor(evt) {
+  const hasCurrentColorClass = evt.target.classList.contains('current-color');
+  if (evt.target === homeLink) {
+    if (!hasCurrentColorClass) {
+      // Додаємо клас current-color, якщо його немає
+      homeLink.classList.add('current-color');
+      shoppingList.classList.remove('current-color');
+    }
+  } else if (evt.target === shoppingList) {
+    if (!hasCurrentColorClass) {
+      // Додаємо клас current-color, якщо його немає
+      shoppingList.classList.add('current-color');
+      homeLink.classList.remove('current-color');
+    }
+  }
+}
 
 
 
