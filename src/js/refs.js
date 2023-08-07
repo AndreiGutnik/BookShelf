@@ -14,6 +14,6 @@ export default {
 
 
 
-	scrollUp: document.querySelector('.scroll-up')
+	scrollUp: document.querySelector('.scroll-up'),
 
 };
