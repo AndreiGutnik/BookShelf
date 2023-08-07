@@ -36,6 +36,7 @@ function checkAuthStorage() {
       return;
     inputAuthLogin.value = dataAuthInStorage.name;
     inputAuthEmail.value = dataAuthInStorage.email;
+    inputAuthPassword.value = dataAuthInStorage.password;
   } catch {
     alert('Error in local storage! Empty key value.');
   }
@@ -46,12 +47,11 @@ formAuth.addEventListener('submit', onClickAuthSubmit);
 
 function onEnterAuthInput(event) {
   dataAuthInStorage[event.target.name] = event.target.value;
-  dataAuthInStorage.password = '';
   localStorage.setItem(KEY_AUTH_IN_STORAGE, JSON.stringify(dataAuthInStorage));
 }
 
-function onClickAuthSubmit(event) {
-  event.preventDefault();
+function onClickAuthSubmit(evt) {
+  evt.preventDefault();
   const dataAuthInStorage = JSON.parse(
     localStorage.getItem(KEY_AUTH_IN_STORAGE)
   );
@@ -67,9 +67,45 @@ function onClickAuthSubmit(event) {
   );
   userIs.classList.remove('is-hidden');
   userNone.classList.add('is-hidden');
-  event.target.reset();
+  evt.target.reset();
   localStorage.removeItem(KEY_AUTH_IN_STORAGE);
   refs.modal.classList.toggle('is-hidden');
+  // createUserWithEmailAndPassword(
+  // auth,
+  // dataAuthInStorage.email,
+  // dataAuthInStorage.password
+  // )
+  //   .then(userCredential => {
+  //     // Signed in
+  //     const user = userCredential.user;
+  //     console.log(user);
+  //     // ...
+  //   })
+  //   .catch(error => {
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //     console.log(errorCode);
+  //     console.log(errorMessage);
+  //     // ..
+  //   });
+  signInWithEmailAndPassword(
+    auth,
+    dataAuthInStorage.email,
+    dataAuthInStorage.password
+  )
+    .then(userCredential => {
+      console.log(userCredential.email);
+      // Signed in
+      const user = userCredential.user;
+      console.log(user);
+      // ...
+    })
+    .catch(error => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
 }
 
 (() => {
@@ -88,27 +124,31 @@ function onClickAuthSubmit(event) {
 })();
 
 signUp.addEventListener('click', () => {
-  if (submitBtn.textContent !== 'Sign In') submitBtn.textContent = 'Sign up';
+  if (submitBtn.textContent !== 'Sign In') {
+    inputAuthLogin.classList.remove('is-hidden');
+    submitBtn.style.marginTop = '24px';
+    submitBtn.textContent = 'Sign up';
+  }
 });
 signIn.addEventListener('click', () => {
-  if (submitBtn.textContent !== 'Sign Up') submitBtn.textContent = 'Sign in';
+  if (submitBtn.textContent !== 'Sign Up') {
+    inputAuthLogin.classList.add('is-hidden');
+    submitBtn.style.marginTop = '74px';
+    submitBtn.textContent = 'Sign in';
+  }
 });
 
 import { initializeApp } from 'firebase/app';
 
-function onClickAuthSubmit(evt) {
-  evt.preventDefault();
-  createUserWithEmailAndPassword(auth, email, password);
-}
-// import {
-//   getAuth,
-//   createUserWithEmailAndPassword,
-//   signInWithEmailAndPassword,
-//   signOut,
-//   onAuthStateChanged,
-//   UserInfo,
-// } from 'firebase/auth';
-// import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  UserInfo,
+} from 'firebase/auth';
+import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCLvX8-Phpq_8ryBF-_fTZiLcLcJvYg6Ps',

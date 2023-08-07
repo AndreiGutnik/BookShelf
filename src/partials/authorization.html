@@ -1,18 +1,26 @@
 <section class="auth container">
-  <button data-modal-open class="authorization-button" type="button">
-    <div class="user-auth-none">
-      <p class="user-auth-undef">Sign up</p>
-      <svg class="authorization-button-icon" width="20" height="20">
+  <button data-modal-open class="auth-logon" type="button">
+    <div class="auth-logon-noneuser is-hidden">
+      <p class="auth-logon-noneuser-text">Sign up</p>
+      <svg class="auth-logon-icon" width="20" height="20">
         <use href="/src/images/icons.svg#arrow-narrow"></use>
       </svg>
     </div>
-    <div class="user-auth-is is-hidden">
-      <svg class="authorization-button-icon" width="37" height="37">
+    <div class="auth-logon-isuser">
+      <svg class="auth-logon-isuser-icon" width="37" height="37">
         <use href="/src/images/icons.svg#user"></use>
       </svg>
-      <p class="user-auth-name">User</p>
-      <svg class="authorization-button-icon" width="20" height="20">
+      <p class="auth-logon-isuser-text">Stephen</p>
+      <svg class="auth-logon-icon" width="20" height="20">
         <use href="/src/images/icons.svg#caret-down"></use>
+      </svg>
+    </div>
+  </button>
+  <button data-modal-open class="auth-logout" type="button">
+    <div class="auth-logout-user">
+      <p class="auth-logout-user-text">Log out</p>
+      <svg class="auth-button-icon" width="20" height="20">
+        <use href="/src/images/icons.svg#arrow-narrow"></use>
       </svg>
     </div>
   </button>

@@ -4,49 +4,78 @@
   pointer-events: none;
 }
 
-.authorization-button {
+.auth-logon {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin: 20px auto;
-  padding: 4px 12px;
   width: 184px;
-  height: 45px;
-  gap: 19px;
+  height: 48px;
 
-  border-radius: 36px;
+  font-weight: 500;
+  line-height: calc(18 / 14);
+  letter-spacing: -0.56px;
+
+  border-radius: 18px;
   border-color: transparent;
   background-color: var(--color-violet);
 
   color: var(--font-color-white);
+  &-noneuser {
+    width: 184px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+  }
+  &-isuser {
+    width: 184px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-text {
+      color: var(--font-color-white);
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: -0.44px;
+    }
+  }
+  & .auth-logon {
+    &-noneuser {
+      padding: 14px;
+    }
+    &-isuser {
+      padding: 4px;
+    }
+  }
 }
 
-.user-auth {
-  &-is {
+.auth-logout {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  padding: 15px 24px;
+  width: 118px;
+  height: 48px;
+
+  border-radius: 18px;
+  border: 1.5px solid var(--border-color);
+
+  background-color: var(--font-color-white);
+  &-user {
+    width: 118px;
     display: flex;
     align-items: center;
-    gap: 9px;
-  }
-  &-none {
-    display: flex;
-    align-items: center;
-    gap: 90px;
-  }
-  &-name {
-    color: #fff;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.44px;
-  }
-  &-undef {
-    color: #fff;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 18px;
-    letter-spacing: -0.56px;
+    justify-content: space-between;
+    &-text {
+      color: rgba(17, 17, 17, 1);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: calc(18 / 14);
+      letter-spacing: -0.56px;
+    }
   }
 }
 
@@ -252,7 +281,11 @@
 
 // ===============================================================
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 768px) {
+  .auth-logon {
+    border: 1.5px solid var(--border-color);
+  }
+
   .modal-auth {
     width: 579px;
     height: 516px;
