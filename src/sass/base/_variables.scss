@@ -16,7 +16,6 @@ body.light {
     #4f2ee8 0%,
     #dcdcdc 100%
   );
-  // ========= Authorization ===========================================
   --border-color: #202024; //Добавить в переменные в main
   --background-color-submit: #111111; //Добавить в переменные в main
   --text-color-submit: #f3f3f3; //Добавить в переменные в main
@@ -24,7 +23,8 @@ body.light {
   --text-color-auth-form: #111111; //Добавить в переменные в main
   --background-color-auth-form: #f6f6f6; //Добавить в переменные в main
   --background-color-submit-active: #333333; //Добавить в переменные в main
-  // ========= /Authorization ===========================================
+  --color-pagination-fill: #B4AFAF;
+
 }
 
 body.dark {
@@ -36,7 +36,6 @@ body.dark {
     #4f2ee8 0%,
     #686868 100%
   );
-  // ========= Authorization ===========================================
   --border-color: #f6f6f6; //Добавить в переменные в main
   --background-color-submit: #f6f6f6; //Добавить в переменные в main
   --text-color-submit: #202024; //Добавить в переменные в main
@@ -45,9 +44,9 @@ body.dark {
     246,
     246,
     0.5
-  ); //Добавить в переменные в main
+  );
   --text-color-auth-form: #f6f6f6; //Добавить в переменные в main
   --background-color-auth-form: #202024; //Добавить в переменные в main
   --background-color-submit-active: #f6f6f6; //Добавить в переменные в main
-  // ========= /Authorization ===========================================
+  --color-pagination-fill: #FFFFFF;
 }
