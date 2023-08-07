@@ -5,5 +5,15 @@ export default {
     mobileMenu: document.querySelector('.mobile-menu'),
     singupBtn: document.querySelector('.js-authorization'),
     shoppingList: document.querySelector('.js-shopping-list'),
-    homeLink: document.querySelector('.js-home-link')
+    homeLink: document.querySelector('.js-home-link'),
+
+
+  
+  
+  
+  
+  
+  
+  
+    scrollUp: document.querySelector('.scroll-up'),
 };
