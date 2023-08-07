@@ -37,9 +37,9 @@
 }
 
 .shop-list-container {
-    // @include minW-Dt {
-    //     display: flex;
-    //     align-items: center;
-    //     gap: 40px;
-    // }
+    @include minW-Dt {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
 }
