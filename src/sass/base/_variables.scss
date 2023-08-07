@@ -16,7 +16,6 @@ body.light {
     #4f2ee8 0%,
     #dcdcdc 100%
   );
-  // ========= Authorization ===========================================
   --border-color: #202024; //Добавить в переменные в main
   --background-color-submit: #111111; //Добавить в переменные в main
   --text-color-submit: #f3f3f3; //Добавить в переменные в main
@@ -44,16 +43,10 @@ body.dark {
     #4f2ee8 0%,
     #686868 100%
   );
-  // ========= Authorization ===========================================
   --border-color: #f6f6f6; //Добавить в переменные в main
   --background-color-submit: #f6f6f6; //Добавить в переменные в main
   --text-color-submit: #202024; //Добавить в переменные в main
-  --text-buttons-submit: rgba(
-    246,
-    246,
-    246,
-    0.5
-  ); //Добавить в переменные в main
+  --text-buttons-submit: rgba(246, 246, 246, 0.5);
   --text-color-auth-form: #f6f6f6; //Добавить в переменные в main
   --background-color-auth-form: #202024; //Добавить в переменные в main
   --background-color-submit-active: #f6f6f6; //Добавить в переменные в main
@@ -66,8 +59,13 @@ body.dark {
     #686868 100%
   );
   --color-pagination-fill: #ffffff;
+
+  --background-color1: #202024;
+  --font-color: #ffffff;
+  --background-checkbox-theme: linear-gradient(
+    180deg,
+    #4f2ee8 0%,
+    #686868 100%
+  );
+  --color-pagination-fill: #ffffff;
 }
---background-color1: #202024;
---font-color: #ffffff;
---background-checkbox-theme: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
---color-pagination-fill: #ffffff;
