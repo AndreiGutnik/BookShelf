@@ -17,12 +17,13 @@ const loadMoreBtn = new LoadMoreBtn({
 fetchCategory();
 
 async function fetchCategory() {
- bookService.selectedCategory = 'Hardcover Fiction';
+
  try {
-  const category = await bookService.getBooksByCategory();
-  // const topBooks = await bookService.getTopBooks();
-  // console.log(topBooks);
-  const markup = createMarkupByCategory(category);
+
+   const topBooks = await bookService.getTopBooks();
+   console.log(topBooks);
+  const markup = createMarkupTop(topBooks);
+  
   categoryChoice.insertAdjacentHTML('beforeend', markup);
 } catch (err) {
   onError(err);
@@ -35,9 +36,9 @@ loadMoreBtn.button.addEventListener('click', () => {
   loadMoreBtn.disable();
   bookService.resetPage();
 
-  bookService.getTopBooks()
+  bookService.getBooksByCategory()
     .then(data => {
-      bookList0.innerHTML = createMarkupTop(data);
+      bookList0.innerHTML = createMarkupByCategory(data);
       loadMoreBtn.enable();
     })
     .catch(onError);
