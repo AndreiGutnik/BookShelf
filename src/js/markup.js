@@ -5,7 +5,7 @@ export function createMarkupByCategory(arr) {
       `<li class="book-list-item">
             <p class="book-list-category">${list_name}</p>
           <a href="${amazon_product_url}" class="book-list-link" target="_blank"
-            ><img class="book-list-img" src="${book_image}" />
+            ><div class="thumb"><img class="book-list-img" src="${book_image}" /></div>
             <p class="book-list-name">${title}</p>
             <p class="book-list-author">${author}</p>
           </a>
@@ -19,7 +19,7 @@ export function createMarkupByCategory(arr) {
         `<li class="book-list-item">
         <p class="book-list-category">${list_name}</p>
           <a href="${list_name.amazon_product_url}" class="book-list-link" target="_blank">
-            <img class="book-list-img" src="${list_name.book_image}" />
+         <div class="thumb"><img class="book-list-img" src="${list_name.book_image}" /></div>   
             <p class="book-list-name">${list_name.title}</p>
             <p class="book-list-author">${list_name.author}</p>
           </a>
