@@ -1,7 +1,31 @@
 const throttle = require('lodash.throttle');
-
 import refs from '../refs';
 import onError from '../error';
+
+import { initializeApp } from 'firebase/app';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  UserInfo,
+} from 'firebase/auth';
+import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyCLvX8-Phpq_8ryBF-_fTZiLcLcJvYg6Ps',
+  authDomain: 'bookshelf-96ecb.firebaseapp.com',
+  projectId: 'bookshelf-96ecb',
+  storageBucket: 'bookshelf-96ecb.appspot.com',
+  messagingSenderId: '83733055479',
+  appId: '1:83733055479:web:3665918d4fcdd1c4d550f2',
+  measurementId: 'G-F45EYV47FF',
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+console.log(auth);
 
 const {
   formAuth,
@@ -122,7 +146,6 @@ function onClickAuthSubmit(evt) {
       dataAuthInStorage.password
     )
       .then(userCredential => {
-        console.log(userCredential);
         // Signed in
         const user = userCredential.user;
         console.log(user);
@@ -141,6 +164,18 @@ function onClickAuthSubmit(evt) {
         console.log(errorMessage);
         onError(errorCode);
       });
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        const uid = user.uid;
+        console.log(uid);
+        // ...
+      } else {
+        // User is signed out
+        // ...
+      }
+    });
   }
 }
 
@@ -162,12 +197,21 @@ userLogout.addEventListener('click', () => {
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
-  function toggleModal() {
+  function toggleModal(evt) {
     const userFromStorage = localStorage.getItem(USER_NAME);
     if (userFromStorage && refs.modal.classList.contains('is-hidden')) {
       return;
     }
     refs.modal.classList.toggle('is-hidden');
+
+    // refs.openModalBtn.addEventListener('keydown', listEvent);
+    // refs.closeModalBtn.addEventListener('keydown', listEvent);
+
+    // function listEvent(evt) {
+    //   if (evt.key === 'Escape') {
+    //     refs.modal.classList.toggle('is-hidden');
+    //   }
+    // }
   }
 })();
 
@@ -185,29 +229,3 @@ signIn.addEventListener('click', () => {
     submitBtn.textContent = 'Sign in';
   }
 });
-
-import { initializeApp } from 'firebase/app';
-
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-  UserInfo,
-} from 'firebase/auth';
-import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyCLvX8-Phpq_8ryBF-_fTZiLcLcJvYg6Ps',
-  authDomain: 'bookshelf-96ecb.firebaseapp.com',
-  projectId: 'bookshelf-96ecb',
-  storageBucket: 'bookshelf-96ecb.appspot.com',
-  messagingSenderId: '83733055479',
-  appId: '1:83733055479:web:3665918d4fcdd1c4d550f2',
-  measurementId: 'G-F45EYV47FF',
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-console.log(auth);
