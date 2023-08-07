@@ -27,7 +27,3 @@ async function fetchCategoryList() {
     }
 }  
 
-
-
-
- 

@@ -8,7 +8,6 @@
     }
 }
 
-
 .category {
     width: 335px;
     height: 228px;
@@ -47,6 +46,7 @@
     color: rgba(17, 17, 17, 0.6);
     font-size: 16px;
     line-height: 1.125;
+    letter-spacing: -0.32px;
 
     &:not(:last-child) {
         margin-bottom: 24px;
@@ -56,24 +56,28 @@
     }
 
     @media screen and (min-width: 768px) {
+        font-size: 18px;
         line-height: 1.33;
+        letter-spacing: -0.36px;
         }
 
     &:hover {
         font-weight: 700;
+        
         color: var(--font-color-violet);
     }
 }
 
 .active {
     color: var(--font-color-violet);
+    text-transform: uppercase;
     font-weight: 700;
 }
 
 body.dark .category__item {
     color: rgba(255, 255, 255, 0.6);
      &:hover, &:focus {
-        color: rgba(234, 198, 69, 1);
+        color: var(--font-color-yellow);
      }
 }
 

@@ -16,6 +16,7 @@ ul {
   margin-bottom: 0;
   padding-left: 0;
   text-decoration: none;
+  list-style: none;
 }
 
 a {
@@ -46,12 +47,16 @@ body.light {
   --background-color: #ffffff;
   --background-color1: #f6f6f6;
   --font-color: #111111;
+  --background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
+  --color-pagination-fill: #B4AFAF;
 }
 
 body.dark {
   --background-color: #000000;
   --background-color1: #202024;
   --font-color: #ffffff;
+  --background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  --color-pagination-fill: #FFFFFF;
 }
 
 @font-face {
@@ -120,37 +125,46 @@ body {
   margin: -1px;
 }
 
-.category {
-  margin-bottom: 40px;
+@media screen and (min-width: 768px) {
+  .flex-group {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .flex-group {
+    flex-direction: column;
+  }
 }
 
-.position {
+.category {
   width: 335px;
   height: 228px;
   overflow-y: scroll;
+  margin-bottom: 40px;
 }
-.position::-webkit-scrollbar {
+.category::-webkit-scrollbar {
   width: 8px;
 }
-.position::-webkit-scrollbar-thumb {
+.category::-webkit-scrollbar-thumb {
   border-radius: 12px;
   height: 114px;
   background-color: rgb(224, 224, 224);
 }
 @media screen and (min-width: 768px) {
-  .position {
+  .category {
     width: 337px;
     height: 472px;
     margin-right: 32px;
   }
-  .position::-webkit-scrollbar-thumb {
+  .category::-webkit-scrollbar-thumb {
     height: 167px;
   }
 }
 @media screen and (min-width: 1440px) {
-  .position {
+  .category {
     width: 356px;
     margin-right: 40px;
+    margin-bottom: 86px;
   }
 }
 
@@ -159,6 +173,7 @@ body {
   color: rgba(17, 17, 17, 0.6);
   font-size: 16px;
   line-height: 1.125;
+  letter-spacing: -0.32px;
 }
 .category__item:not(:last-child) {
   margin-bottom: 24px;
@@ -170,7 +185,9 @@ body {
 }
 @media screen and (min-width: 768px) {
   .category__item {
+    font-size: 18px;
     line-height: 1.33;
+    letter-spacing: -0.36px;
   }
 }
 .category__item:hover {
@@ -180,6 +197,7 @@ body {
 
 .active {
   color: var(--font-color-violet);
+  text-transform: uppercase;
   font-weight: 700;
 }
 
@@ -187,9 +205,9 @@ body.dark .category__item {
   color: rgba(255, 255, 255, 0.6);
 }
 body.dark .category__item:hover, body.dark .category__item:focus {
-  color: rgb(234, 198, 69);
+  color: var(--font-color-yellow);
 }
 
-body.dark .position::-webkit-scrollbar-thumb {
+body.dark .category::-webkit-scrollbar-thumb {
   background-color: rgba(17, 17, 17, 0.6);
 }/*# sourceMappingURL=index.css.map */
