@@ -1,0 +1,181 @@
+.about-book-modal {
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+    top: 430px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 335px;
+    padding: 40px 24px;
+    border: 2px solid $secondary-colour;
+    border-radius: 18px;
+    background-color: $main-background;
+    height: 806px;
+}
+
+.close-modal-btn {
+    position: absolute;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    top: 7px;
+    right: 7px;
+    border: none;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+    background: $modal-light-background;
+
+    &:hover {
+        fill: $hover-light-theme;
+    }
+}
+
+.image-about-book-modal {
+    width: 278px;
+    height: 408px;
+    border-radius: 8px;
+}
+
+.title-about-book-modal {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    margin-top: 14px;
+}
+
+.author-about-book-modal {
+    font-style: italic;
+    font-size: 12px;
+    line-height: 14px;
+    color: $paragraph-colour;
+    margin-top: 4px;
+
+    width: 287px;
+
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.text-about-book-modal {
+    width: 287px;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 18px;
+}
+
+.shop-modal-list {
+    width: 180px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 14px;
+    gap: 20px;
+    filter: grayscale(1);
+}
+
+.shop-modal-item {
+    transition: filter 0.3s ease;
+}
+
+.shop-modal-item:hover {
+    filter: $icons-shadow;
+}
+
+.modal-id-buttons {
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+    border: 2px solid $hover-light-theme;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    text-transform: uppercase;
+    padding: 14px 23px;
+    bottom: 50px;
+    transition: background, color 0.3s ease;
+
+    &:hover {
+        background: $hover-light-theme;
+        color: $secondary-colour;
+        cursor: pointer;
+    }
+}
+
+.add-storage-button {
+    width: 221px;
+}
+
+.storage-delete-button {
+    width: 279px;
+}
+
+.remove-modal-btn {
+    display: none;
+}
+
+.storage-description {
+    position: absolute;
+    width: 242px;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: -0.04em;
+    color: rgba(17, 17, 17, 0.5);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .about-book-modal {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        padding: 40px;
+        height: 500px;
+        width: 579px;
+    }
+
+    .close-modal-btn {
+        width: 28px;
+        height: 28px;
+        top: 24px;
+        right: 24px;
+    }
+
+    .image-about-book-modal {
+        width: 192px;
+        height: 281px;
+        border-radius: 8px;
+    }
+
+    .info-modal {
+        position: absolute;
+        width: 270px;
+        left: 256px;
+        top: 30px;
+    }
+
+    .modal-id-buttons {
+        bottom: 60px;
+    }
+
+    .storage-description {
+        width: 324px;
+        bottom: 20px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .add-storage-button {
+        width: 499px;
+    }
+
+    .storage-delete-button {
+        width: 499px;
+    }
+}
