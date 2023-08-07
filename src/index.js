@@ -3,8 +3,8 @@
 
 
 
-
-
+// minnikov js
+import './js/main-section';
 
 
 
