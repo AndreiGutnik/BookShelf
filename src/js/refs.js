@@ -1,5 +1,5 @@
 export default {
-  checkTheme: document.querySelector('.check-theme');
+  checkTheme: document.querySelector('.check-theme'),
 
 
 
