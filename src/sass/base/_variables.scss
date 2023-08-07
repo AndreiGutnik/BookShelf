@@ -1,25 +1,62 @@
-:root{
-	--color-violet: #4F2EE8;
-	--color-yellow: #EAC645;
-	--font-color-white: #ffffff;
-	--font-color-grey: #6c6c6c;
-	--font-color-violet: #4F2EE8;
-	--font-color-yellow: #EAC645;
+:root {
+  --color-violet: #4f2ee8;
+  --color-yellow: #eac645;
+  --font-color-white: #ffffff;
+  --font-color-grey: #6c6c6c;
+  --font-color-violet: #4f2ee8;
+  --font-color-yellow: #eac645;
 }
 
 body.light {
   --background-color: #ffffff;
-	--background-color1: #f6f6f6;
-	--font-color: #111111;
-	--background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
-  --color-pagination-fill: #B4AFAF;
+  --background-color1: #f6f6f6;
+  --font-color: #111111;
+  --background-checkbox-theme: linear-gradient(
+    180deg,
+    #4f2ee8 0%,
+    #dcdcdc 100%
+  );
+  --border-color: #202024; //Добавить в переменные в main
+  --background-color-submit: #111111; //Добавить в переменные в main
+  --text-color-submit: #f3f3f3; //Добавить в переменные в main
+  --text-buttons-submit: rgba(17, 17, 17, 0.5); //Добавить в переменные в main
+  --text-color-auth-form: #111111; //Добавить в переменные в main
+  --background-color-auth-form: #f6f6f6; //Добавить в переменные в main
+  --background-color-submit-active: #333333; //Добавить в переменные в main
+  // ========= /Authorization ===========================================
+  --background-color1: #f6f6f6;
+  --font-color: #111111;
+  --background-checkbox-theme: linear-gradient(
+    180deg,
+    #4f2ee8 0%,
+    #dcdcdc 100%
+  );
+  --color-pagination-fill: #b4afaf;
 }
 
 body.dark {
   --background-color: #000000;
-	--background-color1: #202024;
-	--font-color: #ffffff;
-	--background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+  --background-color1: #202024;
+  --font-color: #ffffff;
+  --background-checkbox-theme: linear-gradient(
+    180deg,
+    #4f2ee8 0%,
+    #686868 100%
+  );
+  --border-color: #f6f6f6; //Добавить в переменные в main
+  --background-color-submit: #f6f6f6; //Добавить в переменные в main
+  --text-color-submit: #202024; //Добавить в переменные в main
+  --text-buttons-submit: rgba(246, 246, 246, 0.5);
+  --text-color-auth-form: #f6f6f6; //Добавить в переменные в main
+  --background-color-auth-form: #202024; //Добавить в переменные в main
+  --background-color-submit-active: #f6f6f6; //Добавить в переменные в main
+  // ========= /Authorization ===========================================
+  --background-color1: #202024;
+  --font-color: #ffffff;
+  --background-checkbox-theme: linear-gradient(
+    180deg,
+    #4f2ee8 0%,
+    #686868 100%
+  );
   --color-pagination-fill: #ffffff;
-}  
-
+}

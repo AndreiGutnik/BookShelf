@@ -3,12 +3,9 @@
 @import './base/variables';
 @import './base/fonts';
 @import './base/base';
-@import './components/switchThems';
-
-
-
-
-
-@import './components/loader';
+@import './components/authorization';
 
 @import './components/scrollUp';
+@import './components/switchThems';
+
+@import './components/loader';
