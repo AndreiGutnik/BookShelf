@@ -40,6 +40,7 @@ const {
   userNameBtn,
   modalAuth,
   userLogout,
+  headerCont,
 } = refs;
 
 const KEY_AUTH_IN_STORAGE = 'authorization-form-state';
@@ -54,12 +55,12 @@ if (user) {
   userName.textContent = user;
   userNameBtn.classList.remove('is-hidden');
   userNoneBtn.classList.add('is-hidden');
-  userLogout.classList.remove('is-hidden');
+  // userLogout.classList.remove('is-hidden');
 } else {
   userName.textContent = 'User';
   userNameBtn.classList.add('is-hidden');
   userNoneBtn.classList.remove('is-hidden');
-  userLogout.classList.add('is-hidden');
+  // userLogout.classList.add('is-hidden');
 }
 
 checkAuthStorage();
@@ -128,7 +129,8 @@ function onClickAuthSubmit(evt) {
         localStorage.setItem(USER_NAME, userToStorage);
         userNameBtn.classList.remove('is-hidden');
         userNoneBtn.classList.add('is-hidden');
-        userLogout.classList.remove('is-hidden');
+        // userLogout.classList.remove('is-hidden');
+        headerCont.classList.toggle('is-hidden');
       })
       .catch(error => {
         const errorCode = error.code;
@@ -170,7 +172,8 @@ function onClickAuthSubmit(evt) {
         localStorage.setItem(USER_NAME, userToStorage);
         userNameBtn.classList.remove('is-hidden');
         userNoneBtn.classList.add('is-hidden');
-        userLogout.classList.remove('is-hidden');
+        // userLogout.classList.remove('is-hidden');
+        headerCont.classList.toggle('is-hidden');
       })
       .catch(error => {
         const errorCode = error.code;
@@ -186,11 +189,11 @@ function onClickAuthSubmit(evt) {
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
         console.log(uid);
-        alert('User in');
+        // alert('User in');
         // ...
       } else {
         // User is signed out
-        alert('User out');
+        // alert('User out');
         // ...
       }
     });
@@ -202,7 +205,7 @@ userLogout.addEventListener('click', () => {
   userName.textContent = 'User';
   userNameBtn.classList.add('is-hidden');
   userNoneBtn.classList.remove('is-hidden');
-  userLogout.classList.add('is-hidden');
+  // userLogout.classList.add('is-hidden');
 });
 
 (() => {
@@ -221,6 +224,7 @@ userLogout.addEventListener('click', () => {
       return;
     }
     refs.modal.classList.toggle('is-hidden');
+    headerCont.classList.toggle('is-hidden');
 
     // refs.openModalBtn.addEventListener('keydown', listEvent);
     // refs.closeModalBtn.addEventListener('keydown', listEvent);

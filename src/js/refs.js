@@ -14,12 +14,14 @@ export default {
   userNone: document.querySelector('.auth-logon-noneuser-text'),
   userName: document.querySelector('.auth-logon-isuser-text'),
   userLogout: document.querySelector('.auth-logout'),
-};
 
+  scrollUp: document.querySelector('.scroll-up'),
 
-
-
-
-
-	scrollUp: document.querySelector('.scroll-up')
+  burgerBtn: document.querySelector('.js-burger'),
+  iconClose: document.querySelector('.close-menu'),
+  iconBurger: document.querySelector('.open-menu'),
+  mobileMenu: document.querySelector('.mobile-menu'),
+  shoppingList: document.querySelector('.js-shopping-list'),
+  homeLink: document.querySelector('.js-home-link'),
+  headerCont: document.querySelector('.header-container'),
 };
