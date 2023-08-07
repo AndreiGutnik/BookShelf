@@ -1,25 +1,42 @@
 const throttle = require('lodash.throttle');
 
 import refs from '../refs';
+import onError from '../error';
 
 const {
   formAuth,
   inputAuthLogin,
   inputAuthEmail,
   inputAuthPassword,
-  submitAuthbutton,
   submitBtn,
   signUp,
   signIn,
-  userIs,
-  userNone,
-  modal,
+  userName,
+  userNoneBtn,
+  userNameBtn,
+  modalAuth,
+  userLogout,
 } = refs;
 
 const KEY_AUTH_IN_STORAGE = 'authorization-form-state';
-const KEY_ARRAY_AUTH_IN_STORAGE = 'array-authorization-client';
-const arrayDataAuthStorage = [];
 const dataAuthInStorage = {};
+const SWITCH_IN_UP = 'switch-in-up';
+const USER_NAME = 'user-name';
+localStorage.setItem(SWITCH_IN_UP, 'up');
+
+const user = localStorage.getItem(USER_NAME);
+
+if (user) {
+  userName.textContent = user;
+  userNameBtn.classList.remove('is-hidden');
+  userNoneBtn.classList.add('is-hidden');
+  userLogout.classList.remove('is-hidden');
+} else {
+  userName.textContent = 'User';
+  userNameBtn.classList.add('is-hidden');
+  userNoneBtn.classList.remove('is-hidden');
+  userLogout.classList.add('is-hidden');
+}
 
 checkAuthStorage();
 
@@ -47,6 +64,7 @@ formAuth.addEventListener('submit', onClickAuthSubmit);
 
 function onEnterAuthInput(event) {
   dataAuthInStorage[event.target.name] = event.target.value;
+  dataAuthInStorage.password = '********';
   localStorage.setItem(KEY_AUTH_IN_STORAGE, JSON.stringify(dataAuthInStorage));
 }
 
@@ -55,58 +73,84 @@ function onClickAuthSubmit(evt) {
   const dataAuthInStorage = JSON.parse(
     localStorage.getItem(KEY_AUTH_IN_STORAGE)
   );
-  if (!dataAuthInStorage || !dataAuthInStorage.name || !dataAuthInStorage.email)
-    return;
+  const switchFromStorage = localStorage.getItem(SWITCH_IN_UP);
+  if (switchFromStorage === 'up')
+    if (
+      !dataAuthInStorage ||
+      !dataAuthInStorage.name ||
+      !dataAuthInStorage.email
+    )
+      return;
+  if (switchFromStorage === 'in')
+    if (!dataAuthInStorage || !dataAuthInStorage.email) return;
 
-  console.log(dataAuthInStorage);
-
-  arrayDataAuthStorage.push(dataAuthInStorage);
-  localStorage.setItem(
-    KEY_ARRAY_AUTH_IN_STORAGE,
-    JSON.stringify(dataAuthInStorage)
-  );
-  userIs.classList.remove('is-hidden');
-  userNone.classList.add('is-hidden');
   evt.target.reset();
   localStorage.removeItem(KEY_AUTH_IN_STORAGE);
-  refs.modal.classList.toggle('is-hidden');
-  // createUserWithEmailAndPassword(
-  // auth,
-  // dataAuthInStorage.email,
-  // dataAuthInStorage.password
-  // )
-  //   .then(userCredential => {
-  //     // Signed in
-  //     const user = userCredential.user;
-  //     console.log(user);
-  //     // ...
-  //   })
-  //   .catch(error => {
-  //     const errorCode = error.code;
-  //     const errorMessage = error.message;
-  //     console.log(errorCode);
-  //     console.log(errorMessage);
-  //     // ..
-  //   });
-  signInWithEmailAndPassword(
-    auth,
-    dataAuthInStorage.email,
-    dataAuthInStorage.password
-  )
-    .then(userCredential => {
-      console.log(userCredential.email);
-      // Signed in
-      const user = userCredential.user;
-      console.log(user);
-      // ...
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode);
-      console.log(errorMessage);
-    });
+  modalAuth.classList.toggle('is-hidden');
+
+  if (switchFromStorage === 'up') {
+    createUserWithEmailAndPassword(
+      auth,
+      dataAuthInStorage.email,
+      dataAuthInStorage.password
+    )
+      .then(userCredential => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+        const userToStorage = dataAuthInStorage.name;
+        userName.textContent = userToStorage;
+        localStorage.setItem(USER_NAME, userToStorage);
+        userNameBtn.classList.remove('is-hidden');
+        userNoneBtn.classList.add('is-hidden');
+        userLogout.classList.remove('is-hidden');
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        onError(errorCode);
+        // const errorMessage = error.message;
+        // console.log(errorCode);
+        // console.log(errorMessage);
+        // ..
+      });
+  }
+  if (switchFromStorage === 'in') {
+    signInWithEmailAndPassword(
+      auth,
+      dataAuthInStorage.email,
+      dataAuthInStorage.password
+    )
+      .then(userCredential => {
+        console.log(userCredential);
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        // ...
+        const userToStorage = dataAuthInStorage.email;
+        userName.textContent = userToStorage;
+        localStorage.setItem(USER_NAME, userToStorage);
+        userNameBtn.classList.remove('is-hidden');
+        userNoneBtn.classList.add('is-hidden');
+        userLogout.classList.remove('is-hidden');
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        onError(errorCode);
+      });
+  }
 }
+
+userLogout.addEventListener('click', () => {
+  localStorage.removeItem(USER_NAME);
+  userName.textContent = 'User';
+  userNameBtn.classList.add('is-hidden');
+  userNoneBtn.classList.remove('is-hidden');
+  userLogout.classList.add('is-hidden');
+});
 
 (() => {
   const refs = {
@@ -119,21 +163,25 @@ function onClickAuthSubmit(evt) {
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
+    const userFromStorage = localStorage.getItem(USER_NAME);
+    if (userFromStorage && refs.modal.classList.contains('is-hidden')) {
+      return;
+    }
     refs.modal.classList.toggle('is-hidden');
   }
 })();
 
 signUp.addEventListener('click', () => {
   if (submitBtn.textContent !== 'Sign In') {
+    localStorage.setItem(SWITCH_IN_UP, 'up');
     inputAuthLogin.classList.remove('is-hidden');
-    submitBtn.style.marginTop = '24px';
     submitBtn.textContent = 'Sign up';
   }
 });
 signIn.addEventListener('click', () => {
   if (submitBtn.textContent !== 'Sign Up') {
+    localStorage.setItem(SWITCH_IN_UP, 'in');
     inputAuthLogin.classList.add('is-hidden');
-    submitBtn.style.marginTop = '74px';
     submitBtn.textContent = 'Sign in';
   }
 });
