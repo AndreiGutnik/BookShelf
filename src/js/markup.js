@@ -14,7 +14,9 @@ export function createMarkupByCategory(arr) {
   .join('')
 }
   export function createMarkupTop(arr) {
+ 
     return arr
+    
       .map(({ books: [list_name] }) =>
         `<li class="book-list-item">
         <p class="book-list-category">${list_name}</p>
