@@ -1,5 +1,6 @@
-
-const checkTheme = document.querySelector('.check-theme');
+import refs from "../refs";
+const { checkTheme } = refs;
+// const checkTheme = document.querySelector('.check-theme');
 checkTheme.addEventListener('click', () => {
   if (localStorage.getItem('theme') === 'dark') {
     localStorage.removeItem('theme'); 
@@ -10,14 +11,12 @@ checkTheme.addEventListener('click', () => {
 });
 
 function addDarkClassHtml() {
-  try {
     if (localStorage.getItem('theme') === 'dark') {
       document.querySelector('body').classList.add('dark');
     }
     else {
       document.querySelector('body').classList.remove('dark');
     }
-  } catch { }
 }
 
-addDarkClassHtml();
+// addDarkClassHtml();
