@@ -3,7 +3,7 @@ import LoadMoreBtn from '../LoadMoreBtn';
 import { createMarkupByCategory, createMarkupBooks } from '../markup';
 import refs from '../refs';
 import onError from '../error';
-const { categoryChoice, bookList, bookList0 } = refs;
+const { categoryChoice, bookList, listTitle, bookList0, listTitleSpan } = refs;
 const bookService = new BooksService();
 fetchTopBooks();
 async function fetchTopBooks() {
@@ -24,11 +24,17 @@ async function onLoadMoreClick(evt) {
   });
   loadMoreBtn.disable();
   try {
-    bookService.selectedCategory = evt.target.dataset.category;
+    const categoryTitel = evt.target.dataset.category;;
+    bookService.selectedCategory = categoryTitel;
     const booksByCategory = await bookService.getBooksByCategory();
     categoryChoice.classList.add('is-hidden');
     bookList0.innerHTML = createMarkupBooks(booksByCategory);
-    // loadMoreBtn.enable();
+    
+    const lastWordOfCategory = categoryTitel.slice(categoryTitel.lastIndexOf(' ')+1, categoryTitel.length);
+    const firstWordOfCategory = categoryTitel.slice(0,categoryTitel.lastIndexOf(' '));
+    listTitle.textContent = firstWordOfCategory;
+    listTitleSpan.textContent = lastWordOfCategory;
+    console.log(listTitleSpan)
   } catch (err) {
     onError(err);
   }

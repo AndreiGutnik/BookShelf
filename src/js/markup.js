@@ -12,28 +12,27 @@ export function createMarkupByCategory(arr) {
 function createMarkupTop(arr) {
   return arr.books
     .map(
-      ({ book_image, title, author, amazon_product_url }) =>
+      ({ _id, book_image, title, author }) =>
         `<li class="top-book-list-item">
-      <a href="${amazon_product_url}" class="book-list-link" target="_blank">
-      <div class="thumb"><img class="book-list-img" src="${book_image}" />
-      </div>
+        <div class="wrap">
+      <div class="thumb" data-bookid ="${_id}"><img class="book-list-img" src="${book_image}" /></div>
       <p class="book-list-name">${title}</p>
       <p class="book-list-author">${author}</p>
-      </a></li>`
+      </div>
+      </li>`
     )
     .join('');
 }
 export function createMarkupBooks(arr) {
   return arr
     .map(
-      ({ book_image, title, author, amazon_product_url }) =>
+      ({ _id, book_image, title, author }) =>
         `<li class="top-book-list-item card">
-      <a href="${amazon_product_url}" class="book-list-link" target="_blank">
-      <div class="thumb"><img class="book-list-img" src="${book_image}" />
-      </div>
-      <p class="book-list-name">${title}</p>
-      <p class="book-list-author">${author}</p>
-      </a></li>`
+        <div class="wrap">
+      <div class="thumb" data-bookid = "${_id}"><img class="book-list-img" src="${book_image}" /></div>
+      <div><p class="book-list-name">${title}</p>
+      <p class="book-list-author">${author}</p></div></div>
+      </li>`
     )
     .join('');
 }

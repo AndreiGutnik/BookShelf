@@ -13,7 +13,8 @@
   width: 996px;
   padding: 0;}
   }
-.book-list-title {
+
+.books-title {
   color: var(--font-color);
   font-family: 'DM Sans Bold', sans-serif;
   letter-spacing: -1.28px;
@@ -22,8 +23,13 @@
   margin-bottom: 40px;
   text-align: left;
   }
-  .book-list-title span {
-    color:var(--color-violet)
+  .book-list-title-span {
+    color:var(--color-violet);
+    font-family: 'DM Sans Bold', sans-serif;
+  letter-spacing: -1.28px;
+  font-size: 32px;
+  line-height: 1.8;
+  margin-bottom: 40px;
   }
   .top-books-list {
     display: flex;
@@ -71,17 +77,12 @@
   .card{
     display: flex;
     flex-direction: row;
+    margin-bottom: 0;
     row-gap: 25px;
     column-gap: 40px;
    }
-   .top-book-list-item{ 
-    width: 218px;}
- }
- @media (min-width: 1440px){
-   .book-list-name,
-   .book-list-author{
-     max-width: 180px;}
- }
+  }
+ 
 button {
   display: block;
   margin-left: auto;
@@ -94,27 +95,30 @@ button {
      color: var(--font-color);
      margin-top: 14px;
      font-size: 16px;
-     font-weight: 700;
+ font-family: 'DM Sans Bold';
      max-width: 335px;
      line-height: 1.125;
      overflow: hidden;}
+     .book-list-author {
+              letter-spacing: -.04em;
+              color: var(--font-color-grey);
+              font-size: 12px;
+              font-family: 'DM Sans Italic';
+              margin-top: 4px;
+              line-height: 1.16;
+            }
      @media screen and (min-width: 768px){
      .book-list-name{
       max-width: 218px;}
+      .book-list-author{
+        max-width: 218px;}
     }
     @media (min-width: 1440px){
       .book-list-name,
       .book-list-author{
         max-width: 180px;}
     }
-    .book-list-author {
-      letter-spacing: -.04em;
-      color: var(--font-color);
-      font-size: 12px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 1.16;
-     }
+   
     .book-list-category {
       margin-bottom: 18px;
       text-align: left;
@@ -155,4 +159,20 @@ button {
         margin-top: 20px;
       }
      }
-     
+     @media screen and (min-width: 768px) {
+      .books0{ 
+        display: flex;
+        row-gap: 40px;
+        flex-wrap: wrap;
+        column-gap: 25px;
+      }
+     }
+     @media (min-width: 1440px){
+      .books0{
+      column-gap: 24px;}
+    }
+    
+     .thumb:hover,
+     .thumb:focus{
+      transform: scale(1.1);
+     }
