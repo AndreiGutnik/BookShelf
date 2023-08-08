@@ -3,11 +3,17 @@
 @import './base/variables';
 @import './base/fonts';
 @import './base/base';
+
+
+
+
+@import './components/header';
+@import './components/authorization';
+@import './components/category';
 @import './components/support_ukraine.scss'
 
 
+@import './components/switchThems';
 
-
-
-
-
+@import './components/loader';
+@import './components/scrollUp';
