@@ -1,0 +1,170 @@
+// Mobile window 375px
+.support{
+    width: 0;
+    height: 0;
+}
+.desktop-div{
+    margin-top: 40px;
+}
+.shopping-title {
+    margin-bottom: 120px;
+    font-size: 32;
+}
+.shopping-title-span {
+    color:var(--color-violet);
+}
+.shopping-none-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.shopping-none-text {
+    width: 244px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 14;
+}
+.book_card {
+    width: 307px;
+    display: flex;
+    border: 1px solid var(--color-violet);
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 20px;
+}
+
+.book_img {
+    width: 100px;
+    height: 142px;
+    margin-right: 14px;
+}
+
+.title_delete_div {
+    display: flex;
+    top: 14px;
+    justify-content: space-between;
+}
+
+.book_title {
+    font-size: 16px;
+    margin-bottom: 4px;
+    min-width: 165px;
+}
+
+.book_category {
+    font-size: 12px;
+    margin-bottom: 8px;
+    min-width: 165px;
+}
+
+.delete_btn {
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-violet);
+    border-radius: 50%;
+    border: 0px;
+}
+
+.book_description {
+    font-size: 14px;
+    margin-bottom: 14px;
+    max-width: 193px;
+    max-height: 68px;
+    overflow: hidden;
+}
+
+.book_author {
+    font-size: 12px;
+}
+
+.book_soc_div {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.book_soc {
+    height: 16px;
+    width: 16px;
+}
+.book_soc_amazon{
+    width: 32px;
+    height: 11px;
+}
+// Tablet window 768px
+@media screen and (min-width: 768px){
+.shopping-title {
+margin-bottom: 140px;
+    font-size: 48;
+}
+.shopping-none-text {
+    width: 349px;
+    margin-bottom: 20px;
+    font-size: 18;
+}
+.shopping-none-img {
+    width: 322px;
+}
+.book_card {
+    width: 656px;
+    padding: 24px;
+}
+
+.book_img {
+    width: 116px;
+    height: 165px;
+    margin-right: 24px;
+}
+
+.book_category {
+    margin-bottom: 14px;
+}
+
+.delete_svg {
+    width: 34px;
+    height: 34px;
+}
+
+.book_description {
+    max-width: 508px;
+    max-height: 53px;
+    margin-bottom: 32px;
+}
+
+.book_soc_div {
+    align-items: flex-end;
+}
+
+.book_soc {
+    height: 28px;
+    width: 28px;
+}
+.book_soc_amazon {
+    width: 45px;
+    height: 16px;
+}
+}
+// Desktop window 1440px
+@media screen and (min-width: 1440px){
+    .desktop-div{
+        display: flex;
+    }
+.support {
+        width: 356px;
+        height: 474px;
+    }
+.shopping-title {
+    margin-left: 40px;
+}
+.shopping-none-div { 
+      margin-left: 355px;
+}
+.book_card {
+    width: 948px;
+}
+
+.book_description {
+    max-width: 808px;
+}
+};
+
