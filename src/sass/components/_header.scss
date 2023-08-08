@@ -1,8 +1,14 @@
-.header{
+.header {
     width: 100%;
     position: relative;
+
+    &-top {
+        display: flex;
+        justify-content: space-between;
+    }
 }
-.header-container{
+
+.header-container {
     position: relative;
     z-index: 1;
     background-color: var(--background-color);
@@ -10,61 +16,85 @@
     border-radius: 0 0 8px 8px;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: space-between;
     padding-top: 18px;
-    padding-bottom: 18px;  
+    padding-bottom: 18px;
 }
+
 .logo-header {
     display: flex;
     align-items: center;
     gap: 8px;
 }
+
 .logo-bookshelf {
-   fill: var(--font-color);
+    fill: var(--font-color);
 }
+
+.block-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: end;
+}
+
 .menu-btn {
     display: inline-flex;
     border: none;
     padding: 0;
     line-height: 0;
-    background-color: transparent;  
+    background-color: transparent;
     margin-left: auto;
-    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+
+    & .open-menu,
+    .close-menu {
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
+
 .open-menu {
     stroke: var(--font-color);
 }
+
 .menu-btn .open-menu:hover,
-.menu-btn .open-menu:focus{
-    transform: scale(1.2);
+.menu-btn .open-menu:focus {
+    transform: scale(0.95);
     stroke: var(--font-color-violet);
 }
-.close-menu{
+
+.close-menu {
     stroke: var(--font-color);
 }
+
 .menu-btn .close-menu:hover,
 .menu-btn .close-menu:focus {
-    transform: scale(1.2);
+    transform: scale(0.95);
     stroke: var(--font-color-violet);
 }
-.btn-singup{
+
+.btn-singup {
     display: none;
 }
+
 .header-nav {
     display: none;
 }
+
 .mobile-menu {
     z-index: 0;
     position: absolute;
     width: 100%;
-    // height: 100vh;
+    height: 100vh;
     top: 0;
     left: 0;
     padding-top: 84px;
     display: flex;
     flex-direction: column;
-    background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%, var(--color-violet)18.03%, #fff 100%);
+    background-image: radial-gradient(189.32% 190.93% at 59.76% -23.42%,
+            var(--color-violet) 18.03%,
+            #fff 100%);
 }
+
 .mob-btn-singup {
     width: 133px;
     height: 37px;
@@ -79,27 +109,32 @@
     padding: 0;
     gap: 9px;
     align-items: center;
-    border:transparent;
+    border: transparent;
     margin-bottom: 126px;
 }
+
 .user-icon {
     fill: var(--font-color-grey);
 }
-.mob-header-nav{
+
+.mob-header-nav {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 126px;
 }
-.mob-menu-container{
+
+.mob-menu-container {
     gap: 16px;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
+
 .current-color {
     background-color: var(--font-color-yellow);
     border-radius: 36px;
 }
+
 .home-link {
     width: 72px;
     height: 34px;
@@ -110,15 +145,17 @@
     font-size: 14px;
     line-height: 1.3;
     letter-spacing: -0.04em;
-    color: #111111;;
+    color: #111111;
     padding: 8px 16px;
     text-transform: uppercase;
-    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .home-link:hover,
 .home-link:focus {
-    transform: scale(1.05);
+    transform: scale(0.95);
 }
+
 .shoping-link {
     width: 118px;
     height: 20px;
@@ -132,16 +169,19 @@
     letter-spacing: -0.04em;
     color: var(--font-color-white);
     text-transform: uppercase;
-    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .shoping-link:hover,
 .shoping-link:focus {
-    transform: scale(1.05);
+    transform: scale(0.95);
 }
+
 .bag-icon {
     fill: var(--font-color-white);
 }
-.btn-logout{
+
+.btn-logout {
     width: 118px;
     height: 48px;
     display: flex;
@@ -162,82 +202,100 @@
     bottom: 20px;
     z-index: 999;
 }
-.arrow-right-icon{
+
+.arrow-right-icon {
     fill: var(--color-yellow);
 }
-.book-menu{
+
+.book-menu-img {
     width: 100%;
-    
 }
 
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .header-nav {
+        position: relative;
+    }
+
+    .mob-menu-container {
+        position: absolute;
+        top: 255px;
+        left: 130px;
+    }
+
+    .shoping-link {
+        margin-top: 14px;
+    }
+
+    .book-menu-img {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+    }
+}
 
 @media screen and (min-width: 768px) {
     .header-container {
         padding-top: 14px;
         padding-bottom: 13px;
     }
-    .logo-header{
+
+    .logo-header {
         margin-right: 40px;
     }
-    .header-nav{
+
+    .header-nav {
         display: block;
         margin-right: 87px;
     }
-    .mobile-menu{
+
+    .mobile-menu {
         display: none;
     }
-    .menu-btn{
+
+    .menu-btn {
         display: none;
     }
-   
+
     .menu-container {
         display: flex;
         align-items: center;
         gap: 16px;
     }
+
     .current-color {
-       background-color: var(--font-color-yellow);
-       border-radius: 36px;
+        background-color: var(--font-color-yellow);
+        border-radius: 36px;
     }
+
     .shoping-link {
         width: 156px;
         height: 34px;
-        // display: inline-flex;
-        // align-items: center;
-        // justify-content: space-between;
-        // font-style: normal;
-        // font-weight: 500;
-        // font-size: 14px;
-        // line-height: 1.3;
-        // letter-spacing: -0.04em;
         color: var(--font-color);
         padding: 7px 16px;
-        // text-transform: uppercase;
-        // transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
-    // .shoping-link:hover,
-    // .shoping-link:focus {
-    //     transform: scale(1.05);
-    // }
-    // .bag-icon {
-    //     fill: var(--font-color);
-    // }
-    .block-btn{
+
+    .block-btn {
         margin-right: 24px;
     }
-}    
-@media screen and (min-width: 1440px) {
-    .logo-header {
-            margin-right: 76px;
-        }
-    .header-nav{
-        margin-right: 0;
-    }    
-   .menu-container {
-        gap: 24px;
-    }
-
 }
 
+@media screen and (min-width: 1440px) {
+    .logo-header {
+        margin-right: 76px;
+    }
 
+    .header-nav {
+        margin-right: 0;
+    }
 
+    .menu-container {
+        gap: 24px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
