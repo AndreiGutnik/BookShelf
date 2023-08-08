@@ -1,4 +1,29 @@
-<section class="auth container">
+<div class="block">
+  <div class="block-auth">
+    <button data-modal-open class="auth-logon" type="button">
+      <div class="auth-logon-noneuser">
+        <p class="auth-logon-noneuser-text">Sign up</p>
+        <svg class="auth-logon-icon" width="20" height="20">
+          <use href="/src/images/icons.svg#arrow-narrow"></use>
+        </svg>
+      </div>
+      <div class="auth-logon-isuser is-hidden">
+        <img src="/src/images/users/stephen.png" alt="Users photo" />
+        <p class="auth-logon-isuser-text">User</p>
+        <svg class="auth-logon-icon" width="20" height="20">
+          <use href="/src/images/icons.svg#caret-down"></use>
+        </svg>
+      </div>
+    </button>
+    <button data-modal-open class="auth-logout is-hidden" type="button">
+      <div class="auth-logout-user">
+        <p class="auth-logout-user-text">Log out</p>
+        <svg class="auth-button-icon" width="20" height="20">
+          <use href="/src/images/icons.svg#arrow-narrow"></use>
+        </svg>
+      </div>
+    </button>
+  </div>
   <div class="backdrop-auth is-hidden" data-modal>
     <div class="modal-auth">
       <button class="modal-button-auth-close" type="button" data-modal-close>
@@ -59,4 +84,4 @@
       </form>
     </div>
   </div>
-</section>
+</div>
