@@ -13,7 +13,7 @@ function createMarkupTop(arr) {
   return arr.books
     .map(
       ({ book_image, title, author, amazon_product_url }) =>
-        `<li class="top-book-list-item card">
+        `<li class="top-book-list-item">
       <a href="${amazon_product_url}" class="book-list-link" target="_blank">
       <div class="thumb"><img class="book-list-img" src="${book_image}" />
       </div>
