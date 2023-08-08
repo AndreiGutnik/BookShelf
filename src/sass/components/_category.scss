@@ -1,8 +1,11 @@
 
 .flex-group {
+    background-color: var(--background-color1);
+
     @media screen and (min-width: 768px) {
-            display: flex;
-        }
+        display: flex;
+    }
+
     @media screen and (min-width: 1440px) {
         flex-direction: column;
     }
@@ -14,24 +17,28 @@
     overflow-y: scroll;
     margin-bottom: 40px;
 
+    &-support {
+        margin-top: 40px;
+    }
+
     &::-webkit-scrollbar {
         width: 8px;
     }
-    
+
     &::-webkit-scrollbar-thumb {
         border-radius: 12px;
         height: 114px;
-        background-color: rgba(224, 224, 224, 1);
+        background-color: var(--color-line-scroll);
     }
 
     @media screen and (min-width: 768px) {
-        
         width: 337px;
         height: 472px;
         margin-right: 32px;
+
         &::-webkit-scrollbar-thumb {
             height: 167px;
-        } 
+        }
     }
 
     @media screen and (min-width: 1440px) {
@@ -43,48 +50,52 @@
 
 .category__item {
     display: block;
-    color: rgba(17, 17, 17, 0.6);
+    color: var(--color-text-category);
     font-size: 16px;
-    line-height: 1.125;
+    line-height: calc(18 / 16);
+    font-weight: 400;
     letter-spacing: -0.32px;
+    cursor: pointer;
 
     &:not(:last-child) {
         margin-bottom: 24px;
+
         @media screen and (min-width: 768px) {
             margin-bottom: 32px;
         }
     }
 
     @media screen and (min-width: 768px) {
-        font-size: 18px;
-        line-height: 1.33;
+        font-size: 16px;
+        margin-bottom: 32px;
+        line-height: 1.125;
         letter-spacing: -0.36px;
-        }
+    }
 
     &:hover {
         font-weight: 700;
-        
-        color: var(--font-color-violet);
+        font-size: 16px;
+        line-height: 1.125;
+        text-transform: uppercase;
+        color: var(--color-text-categor-hover);
     }
 }
 
-.active {
+.flex-group {
     color: var(--font-color-violet);
-    text-transform: uppercase;
+    //   text-transform: uppercase;
     font-weight: 700;
 }
 
-body.dark .category__item {
-    color: rgba(255, 255, 255, 0.6);
-     &:hover, &:focus {
-        color: var(--font-color-yellow);
-     }
-}
-
-body.dark .category {
-    &::-webkit-scrollbar-thumb {
-        background-color: rgba(17, 17, 17, 0.6);
-    }
-}
-
-
+// .body.dark .category__item {
+//   color: rgba(255, 255, 255, 0.6);
+//   &:hover,
+//   &:focus {
+//     color: var(--font-color-yellow);
+//   }
+// }
+// .body.dark .category {
+//   &::-webkit-scrollbar-thumb {
+//     background-color: rgba(17, 17, 17, 0.6);
+//   }
+// }
