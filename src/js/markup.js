@@ -27,7 +27,7 @@ export function createMarkupBooks(arr) {
   return arr
     .map(
       ({ book_image, title, author, amazon_product_url }) =>
-        `<li class="top-book-list-item">
+        `<li class="top-book-list-item card">
       <a href="${amazon_product_url}" class="book-list-link" target="_blank">
       <div class="thumb"><img class="book-list-img" src="${book_image}" />
       </div>
