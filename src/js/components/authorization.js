@@ -1,6 +1,7 @@
 const throttle = require('lodash.throttle');
 import refs from '../refs';
 import onError from '../error';
+// import onMessageSuccess from '../message';
 
 import { initializeApp } from 'firebase/app';
 import {
@@ -25,7 +26,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-console.log(auth);
 
 const {
   formAuth,
@@ -41,6 +41,7 @@ const {
   modalAuth,
   userLogout,
   headerCont,
+  userLogon,
 } = refs;
 
 const KEY_AUTH_IN_STORAGE = 'authorization-form-state';
@@ -122,31 +123,31 @@ function onClickAuthSubmit(evt) {
       .then(userCredential => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
         // ...
         const userToStorage = dataAuthInStorage.name;
         userName.textContent = userToStorage;
         localStorage.setItem(USER_NAME, userToStorage);
         userNameBtn.classList.remove('is-hidden');
         userNoneBtn.classList.add('is-hidden');
-        // userLogout.classList.remove('is-hidden');
         headerCont.classList.toggle('is-hidden');
+        onMessageSuccess(userToStorage);
       })
       .catch(error => {
-        const errorCode = error.code;
-        onError(errorCode);
+        onMessageSuccess('Stephan');
+        // const errorCode = error.code;
+        // onError(errorCode);
         // const errorMessage = error.message;
         // console.log(errorCode);
         // console.log(errorMessage);
         // ..
       });
     onAuthStateChanged(auth, user => {
-      console.log(user);
+      // console.log(user);
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
-        console.log(uid);
+        // console.log(uid);
         // alert('User in');
         // ...
       } else {
@@ -165,30 +166,28 @@ function onClickAuthSubmit(evt) {
       .then(userCredential => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
         // ...
         const userToStorage = dataAuthInStorage.email;
         userName.textContent = userToStorage;
         localStorage.setItem(USER_NAME, userToStorage);
         userNameBtn.classList.remove('is-hidden');
         userNoneBtn.classList.add('is-hidden');
-        // userLogout.classList.remove('is-hidden');
         headerCont.classList.toggle('is-hidden');
       })
       .catch(error => {
         const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
         onError(errorCode);
+        // const errorMessage = error.message;
+        // console.log(errorCode);
+        // console.log(errorMessage);
       });
     onAuthStateChanged(auth, user => {
-      console.log(user);
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
-        console.log(uid);
+        // console.log(uid);
         // alert('User in');
         // ...
       } else {
@@ -205,7 +204,10 @@ userLogout.addEventListener('click', () => {
   userName.textContent = 'User';
   userNameBtn.classList.add('is-hidden');
   userNoneBtn.classList.remove('is-hidden');
-  // userLogout.classList.add('is-hidden');
+  userLogout.classList.add('is-hidden');
+});
+userLogon.addEventListener('click', () => {
+  userLogout.classList.toggle('is-hidden');
 });
 
 (() => {
@@ -224,7 +226,8 @@ userLogout.addEventListener('click', () => {
       return;
     }
     refs.modal.classList.toggle('is-hidden');
-    headerCont.classList.toggle('is-hidden');
+    userLogout.classList.add('is-hidden');
+    // headerCont.classList.toggle('is-hidden');
 
     // refs.openModalBtn.addEventListener('keydown', listEvent);
     // refs.closeModalBtn.addEventListener('keydown', listEvent);
