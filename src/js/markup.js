@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
 export function createMarkupByCategory(arr) {
   return arr
     .map(

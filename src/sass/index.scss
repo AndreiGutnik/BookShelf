@@ -3,11 +3,15 @@
 @import './base/variables';
 @import './base/fonts';
 @import './base/base';
+
+@import './components/header';
+@import './components/switchThems';
+@import './components/authorization';
+@import './components/category';
+
 @import './components/_home-page.css';
 
 
 
-
-
-
-
+@import './components/loader';
+@import './components/scrollUp';

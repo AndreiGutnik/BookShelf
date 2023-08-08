@@ -1,24 +1,64 @@
-:root{
+:root {
 	--color-violet: #4F2EE8;
 	--color-yellow: #EAC645;
-	--font-color-white: #ffffff;
-	--font-color-grey: #6c6c6c;
+	--font-color-white: #FFFFFF;
+	--font-color-grey: #6C6C6C;
 	--font-color-violet: #4F2EE8;
 	--font-color-yellow: #EAC645;
 }
 
 body.light {
-  --background-color: #ffffff;
-	--background-color1: #f6f6f6;
+	--background-color: #FFFFFF;
+	--background-color1: #F6F6F6;
 	--font-color: #111111;
-	--background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
-  --color-pagination-fill: #B4AFAF;
+	--background-checkbox-theme: linear-gradient(180deg,
+			#4F2EE8 0%,
+			#DCDCDC 100%);
+	--border-color: #202024; //Добавить в переменные в main
+	--background-color-submit: #111111; //Добавить в переменные в main
+	--text-color-submit: #F3F3F3; //Добавить в переменные в main
+	--text-buttons-submit: rgba(17, 17, 17, 0.5); //Добавить в переменные в main
+	--text-color-auth-form: #111111; //Добавить в переменные в main
+	--background-color-auth-form: #F6F6F6; //Добавить в переменные в main
+	--background-color-submit-active: #333333; //Добавить в переменные в main
+	// ========= /Authorization ===========================================
+	// ===========/Category============================================
+	--color-text-category: rgba(17, 17, 17, 0.6);
+	--color-text-categor-hover: #4F2EE8;
+	--color-line-scroll: #E0E0E0;
+	// ===========/Category============================================
+	--background-color1: #F6F6F6;
+	--font-color: #111111;
+	--background-checkbox-theme: linear-gradient(180deg,
+			#4F2EE8 0%,
+			#DCDCDC 100%);
+	--color-pagination-fill: #B4AFAF;
 }
 
 body.dark {
-  --background-color: #000000;
+	--background-color: #000000;
 	--background-color1: #202024;
-	--font-color: #ffffff;
-	--background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
-  --color-pagination-fill: #FFFFFF;
+	--font-color: #FFFFFF;
+	--background-checkbox-theme: linear-gradient(180deg,
+			#4F2EE8 0%,
+			#686868 100%);
+	--border-color: #F6F6F6; //Добавить в переменные в main
+	--background-color-submit: #F6F6F6; //Добавить в переменные в main
+	--text-color-submit: #202024; //Добавить в переменные в main
+	--text-buttons-submit: rgba(246, 246, 246, 0.5);
+	--text-color-auth-form: #F6F6F6; //Добавить в переменные в main
+	--background-color-auth-form: #202024; //Добавить в переменные в main
+	--background-color-submit-active: #F6F6F6; //Добавить в переменные в main
+	// ========= /Authorization ===========================================
+	// ===========/Category============================================
+	--color-text-category: rgba(255, 255, 255, 0.6);
+	--color-text-categor-hover: #EAC645;
+	--color-line-scroll: rgba(17, 17, 17, 0.6);
+	// ===========/Category============================================
+	--background-color1: #202024;
+	--font-color: #FFFFFF;
+	--background-checkbox-theme: linear-gradient(180deg,
+			#4F2EE8 0%,
+			#686868 100%);
+	--color-pagination-fill: #FFFFFF;
 }
