@@ -1,5 +1,5 @@
 .book-list-title {
-    color: #111;
+    color: var(--font-color);
     letter-spacing: -1.28px;
     font-size: 32px;
     font-style: normal;
@@ -7,29 +7,88 @@
     line-height: 1.8;
   }
   .book-list-title span {
-    color: #4f2ee8
+    color:var(--color-violet)
   }
-  .book-list-name {
+  .thumb{
+    height: 535px;
+    width: 335px;
+   }
+   @media screen and (min-width: 768px){
+    .thumb {
+     height: 366px;
+     width: 218px;
+    }
+  }
+   
+    .thumb img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+   .top-books-list{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+  }
+  .card{
+  display: none;
+}
+   .top-books-list .card:nth-child(1) {
+      display: block;
+    }
+  
+  @media (min-width: 768px) and (max-width: 1339px) {
+   .top-books-list .card:nth-child(-n+3) {
+      display: block;
+    }
+  }
+  @media (min-width: 1440px) {
+    .top-books-list{
+      gap: 24px;
+    }
+ 
+    .thumb{
+      width: 180px;
+      height: 306px;
+    }
+   
+  }
+  @media (min-width: 1440px){ 
+    .top-books-list.card {
+    display: block;
+  }}
+   .book-list-name {
     text-overflow: ellipsis;
      white-space: nowrap;
      letter-spacing: -.04em;
      text-transform: uppercase;
-     color: #111;
+     color: var(--font-color);
      margin-top: 14px;
      font-size: 16px;
+     font-weight: 700;
+     max-width: 335px;
      line-height: 1.125;
-     max-width: 218px;
      overflow: hidden;}
+     @media screen and (min-width: 768px){
+     .book-list-name{
+      max-width: 218px;}
+    }
+    @media (min-width: 1440px){
+      .book-list-name,
+      .book-list-author{
+        max-width: 180px;}
+    }
     .book-list-author {
       letter-spacing: -.04em;
-      color: #111;
+      color: var(--font-color);
       font-size: 12px;
       font-style: italic;
       font-weight: 400;
       line-height: 1.16;
      }
     .book-list-category {
-       margin-bottom: 18px;
+      margin: 40px 0 18px;
        color: #b4afaf;
        font-size: 14px;
        font-style: normal;
@@ -37,21 +96,7 @@
        line-height: 18px;
        letter-spacing: 0.42px;
        text-transform: uppercase;}  
-   
     
-  
-     @media screen and (min-width: 768px){
-     .thumb {
-      height: 316px;
-      width: 218px;
-     }}
-    
-     .thumb img {
-       height: 100%;
-       width: 100%;
-       object-fit: cover;
-       display: block;
-     }
      .load-more{
        cursor: pointer;
        letter-spacing: -.01em;
@@ -64,9 +109,15 @@
        align-items: flex-start;
        gap: 10px;
        margin-left: auto;
+       margin-top: 8px;
        padding: 14px 28px;
        font-size: 14px;
        line-height: 1.28;
        transition: background-color .5s cubic-bezier(.4,0,.2,1);
        display: flex;
+     }
+     @media screen and (min-width: 768px){
+      .load-more{
+        margin-top: 20px;
+      }
      }

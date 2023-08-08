@@ -1,45 +1,36 @@
 import BooksService from '../BooksService';
 import LoadMoreBtn from '../LoadMoreBtn';
-import { createMarkupByCategory,
-   createMarkupTop } from '../markup';
+import { createMarkupByCategory, createMarkupBooks } from '../markup';
 import refs from '../refs';
 import onError from '../error';
-
-const { categoryChoice, bookList, bookList0, loadMore } = refs;
-
-
+const { categoryChoice, bookList, bookList0 } = refs;
 const bookService = new BooksService();
-const loadMoreBtn = new LoadMoreBtn({
-  selector: '.load-more',
-  isHidden: true,
-});
-
-fetchCategory();
-
-async function fetchCategory() {
-
- try {
-
-   const topBooks = await bookService.getTopBooks();
-   console.log(topBooks);
-  const markup = createMarkupTop(topBooks);
-  
-  categoryChoice.insertAdjacentHTML('beforeend', markup);
-} catch (err) {
-  onError(err);
+fetchTopBooks();
+async function fetchTopBooks() {
+  try {
+    const topBooks = await bookService.getTopBooks();
+    const markup = createMarkupByCategory(topBooks);
+    categoryChoice.insertAdjacentHTML('beforeend', markup);
+    const loadMoreEl = document.querySelector('.load-more');
+    categoryChoice.addEventListener('click', onLoadMoreClick);
+  } catch (err) {
+    onError(err);
+  }
 }
-}
-
-
-
-loadMoreBtn.button.addEventListener('click', () => {
+async function onLoadMoreClick(evt) {
+  const loadMoreBtn = new LoadMoreBtn({
+    selector: '.load-more',
+    isHidden: true,
+  });
   loadMoreBtn.disable();
-  bookService.resetPage();
+  try {
+    bookService.selectedCategory = evt.target.dataset.category;
+    const booksByCategory = await bookService.getBooksByCategory();
+    categoryChoice.classList.add('is-hidden');
+    bookList0.innerHTML = createMarkupBooks(booksByCategory);
+    // loadMoreBtn.enable();
+  } catch (err) {
+    onError(err);
+  }
+}
 
-  bookService.getTopBooks()
-    .then(data => {
-      bookList0.innerHTML = createMarkupByCategory(data);
-      loadMoreBtn.enable();
-    })
-    .catch(onError);
-});
