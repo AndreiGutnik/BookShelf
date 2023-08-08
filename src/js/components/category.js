@@ -1,5 +1,5 @@
 import BooksService from '../BooksService';
-import createCategoryList from '../markup';
+import {createCategoryList} from '../markup';
 import refs from '../refs';
 import onError from '../error';
 const { categoryListEl } = refs;
