@@ -30,10 +30,11 @@ function createMarkupTop(arr) {
       ({ _id, book_image, title, author }) =>
         `<li class="top-book-list-item">
         <div class="wrap">
-      <div class="thumb" data-bookid ="${_id}"><img class="book-list-img" src="${book_image}" /></div>
+      <div class="thumb" ><img class="book-list-img" src="${book_image}" /> <div class="all-book-popup" data-bookid ="${_id}"> quick view </div>
+      </div>
       <p class="book-list-name">${title}</p>
       <p class="book-list-author">${author}</p>
-      </div>
+     </div>
       </li>`
     )
     .join('');
@@ -44,9 +45,10 @@ export function createMarkupBooks(arr) {
       ({ _id, book_image, title, author }) =>
         `<li class="top-book-list-item card">
         <div class="wrap">
-      <div class="thumb" data-bookid = "${_id}"><img class="book-list-img" src="${book_image}" /></div>
-      <div><p class="book-list-name">${title}</p>
-      <p class="book-list-author">${author}</p></div></div>
+      <div class="thumb"><img class="book-list-img" src="${book_image}" />  <div class="all-book-popup" data-bookid = "${_id}"> quick view </div></div>
+      <p class="book-list-name">${title}</p>
+      <p class="book-list-author">${author}</p>
+     </div>
       </li>`
     )
     .join('');
