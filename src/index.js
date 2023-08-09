@@ -6,7 +6,7 @@ import './js/components/home-page'
 import './js/components/switchThems';
 
 
-
+import './js/about-book-modal';
 
 
 import './js/components/scrollUp.js';
