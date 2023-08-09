@@ -3,7 +3,7 @@ export default class Loader {
     hidden: 'is-hidden',
   };
   constructor(selector) {
-    this.loaderEl = this.getLoader(selector);
+		this.loaderEl = this.getLoader(selector);
   }
 
   getLoader(selector) {
