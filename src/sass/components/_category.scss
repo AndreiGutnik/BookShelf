@@ -2,11 +2,16 @@
   width: 335px;
 
   @media screen and (min-width: 768px) {
-    width: 337px;
+		display: flex;
+		justify-content: left;
+		gap: 32px;
+    width: 704px;
   }
 
   @media screen and (min-width: 1440px) {
-    width: 356px;
+    flex-direction: column;
+		gap: 86px;
+		width: 356px;
   }
 }
 
@@ -43,7 +48,8 @@
   }
 
   @media screen and (min-width: 768px) {
-    height: 472px;
+    width: 337px;
+		height: 472px;
     margin-right: 32px;
 
     &::-webkit-scrollbar-thumb {
@@ -59,6 +65,11 @@
 
 .category__list {
   width: 335px;
+	height: 228px;
+
+	@media screen and (min-width: 768px) {
+    height: 472px;
+  }
 }
 
 .category__item {
