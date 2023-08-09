@@ -177,7 +177,7 @@ function onStorageAdd() {
   }
 
   storageDescription.textContent =
-    'Вітаємо! Ви додали книгу до списку покупок. Для видалення натисніть кнопку "Видалити зі списку покупок".';
+    'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
   storageCheck();
 }
 
