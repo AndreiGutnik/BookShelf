@@ -1,0 +1,73 @@
+<header class="header">
+  <div class="header-container container">
+    <div class="header-top">
+      <a class="logo-header" href="./index.html">
+        <svg class="logo-icon" width="24" height="24">
+          <use href="/src/images/icons.svg#logo"></use>
+        </svg>
+        <svg class="logo-bookshelf" width="77" height="14">
+          <use href="./images/icons.svg#logo-text"></use>
+        </svg>
+      </a>
+      <nav class="header-nav">
+        <ul class="menu-container">
+          <li>
+            <a class="home-link current-color js-home-link" href="./index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="shoping-link js-shopping-list" href="#"
+              >Shopping list
+              <svg class="bag-icon" width="20" height="20">
+                <use href="/src/images/icons.svg#bag"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="block-btn">
+      <include src="./partials/switchThems.html"></include>
+      <button type="button" class="menu-btn js-burger">
+        <svg
+          class="open-menu"
+          width="28"
+          height="28"
+          aria-label="toggle mobile menu"
+        >
+          <use href="./images/icons.svg#burger"></use>
+        </svg>
+        <svg
+          class="close-menu is-hidden"
+          width="28"
+          height="28"
+          aria-label="toggle mobile menu"
+        >
+          <use href="./images/icons.svg#x-close"></use>
+        </svg>
+      </button>
+      <include src="./partials/authorization.html"></include>
+    </div>
+  </div>
+  <div class="mobile-menu is-hidden">
+    <div class="mob-menu container">
+      <nav class="mob-header-nav">
+        <ul class="mob-menu-container">
+          <li>
+            <a class="home-link current-color" href="./index.html">Home</a>
+          </li>
+          <li>
+            <a class="shoping-link" href="#"
+              >Shopping list
+              <svg class="bag-icon" width="20" height="20">
+                <use href="/src/images/icons.svg#bag"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <img class="book-menu-img" src="/src/images/books.png" alt="book" />
+  </div>
+</header>

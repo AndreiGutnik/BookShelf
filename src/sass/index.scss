@@ -4,5 +4,15 @@
 @import './base/fonts';
 @import './base/base';
 
+@import './components/header';
+@import './components/switchThems';
+@import './components/authorization';
+@import './components/category';
+@import './components/slider';
+@import './components/home-page';
 
 @import './components/shopping_list.scss';
+
+
+@import './components/loader';
+@import './components/scrollUp';
