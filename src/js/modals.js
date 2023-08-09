@@ -1,3 +1,13 @@
+
+
+// Выбор элементов модальных окон и других элементов
+const registerModal = document.querySelector('.register-modal');
+const loginModal = document.querySelector('.login-modal');
+const idModal = document.querySelector('.about-book-modal');
+const closeModalBtn = document.querySelector('#modal-close');
+const fireBaseBackdrop = document.querySelector('.fire-base-backdrop');
+const idBackdropModal = document.querySelector('.js-backdrop-modal');
+
 // Функция открытия модального окна по идентификатору
 function openModalId() {
   idModal.classList.remove('is-hidden');
@@ -13,20 +23,4 @@ function closeModalId() {
 // Обработчик клика по кнопке закрытия модального окна
 closeModalBtn.addEventListener('click', closeModalId);
 
-// Обработчик нажатия клавиши Escape для закрытия модального окна
-document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape') {
-    closeModalId();
-  }
-});
-
-
-// Обработчик клика по заднему фону модального окна
-idBackdropModal.addEventListener('click', function (event) {
-  if (event.target === idBackdropModal) {
-    closeModalId();
-  }
-});
-
-// Экспорт функции открытия модального окна по идентификатору
 export { openModalId };
