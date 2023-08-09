@@ -1,0 +1,119 @@
+.slider-swiper {
+  position: relative;
+
+  height: 352px;
+  width: 335px;
+  padding: 24px 40px;
+
+  background: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    var(--color-violet) 18.03%,
+    var(--font-color-white) 100%
+  );
+  box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+  border-radius: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .slider-swiper {
+    height: 472px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .slider-swiper {
+    height: 490px;
+    width: 356px;
+  }
+}
+
+.slider-swiper__title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.slider-swiper__text {
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+  color: var(--font-color-white);
+}
+
+.swiper-container {
+  margin-top: 40px;
+  max-height: 188px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-container {
+    max-height: 292px;
+  }
+}
+
+.swiper-slide {
+  height: auto !important;
+  min-height: 32px;
+  flex-shrink: 0;
+}
+
+.slide__content {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.slide__number {
+  color: var(--font-color-white);
+  font-size: 14px;
+  line-height: 1.29em;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  bottom: 20px;
+}
+
+.swiper-button-next {
+  border-radius: 50%;
+  top: inherit !important;
+  bottom: 14px !important;
+  left: 50% !important;
+  background-color: var(--font-color-white);
+  width: 38px !important;
+  height: 38px !important;
+  transform: translateX(-50%);
+
+  background-image: url('/src/images/fonds/next-button.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+@media screen and (min-width: 1440px) {
+  .swiper-button-next {
+    bottom: 24px !important;
+  }
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: none !important;
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.slider__png {
+  height: 32px;
+
+  filter: brightness(0) invert(1);
+
+  transition: filter 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider__png:hover {
+  filter: none;
+}
