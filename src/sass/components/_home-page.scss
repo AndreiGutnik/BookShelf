@@ -1,11 +1,12 @@
 .home-page {
 	margin-top: 40px;
 
-	@media screen and (min-width: 768px) and (min-width: 1439px) {
+	@media screen and (min-width: 768px) {
 		margin-top: 100px;
   }
 
   @media screen and (min-width: 1440px) {
+    margin-top: 0;
     width: 996px;
   }
 }
@@ -54,6 +55,7 @@
 .thumb {
   width: 335px;
   height: 485px;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .thumb {
@@ -144,6 +146,8 @@ button {
   letter-spacing: -0.01em;
   text-transform: uppercase;
   min-width: 124px;
+  color: var(--font-color);
+  background-color: var(--background-color1);
   height: 46px;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
@@ -154,6 +158,7 @@ button {
   margin-top: 8px;
   padding: 14px 28px;
   font-size: 14px;
+  font-family: 'DM Sans Bold';
   line-height: 1.28;
   transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
@@ -181,8 +186,46 @@ button {
     column-gap: 24px;
   }
 }
+.all-book-popup {
+  cursor: pointer;
+  height: 70px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  color: #111;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -.04em;
+  background-color: #eac645;
+  border-radius: 0 0 8px 8px;
+  padding: 26px 52px;
+  font-size: 14px;
+  font-family: 'DM Sans Medium';
+  line-height: 18px;
+  transition: opacity 250ms cubic-bezier(.4,0,.2,1);
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+}
 
-.thumb:hover,
-.thumb:focus {
-  transform: scale(1.1);
+.thumb:hover .all-book-popup,
+ .thumb:focus .all-book-popup{
+  visibility: visible;
+opacity: 1;
+transform: translateY(0);
+ } 
+  @media screen and (min-width: 768px) {
+    .thumb .book-popup{
+    bottom: 95px;}
+  }
+
+ @media screen and (min-width: 768px) {
+  .all-book-popup{ 
+    width: 218px;
+  }
+ }
+ @media (min-width: 1440px){
+  .all-book-popup{ 
+    width: 180px;
+  }
 }
