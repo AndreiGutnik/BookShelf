@@ -34,5 +34,5 @@ export default {
   loadMoreBtn: document.querySelector('.load-more'),
   listTitle: document.querySelector('.book-list-title'),
   listTitleSpan: document.querySelector('.book-list-title-span'),
+  sliderUkraine: document.querySelector('.slider-swiper'),
 };
-
