@@ -1,5 +1,7 @@
 // Імпорт необхідних модулів і зображень
-// import { openModalId } from './modals';
+import { openModalId } from './modals';
+
+
 import amazonPng from '../images/png-icons/shops/amazon-icon1x.png';
 import amazonPng2x from '../images/png-icons/shops/amazon-icon2x.png';
 import appleBookPng from '../images/png-icons/shops/applebook-icon1x.png';
@@ -133,7 +135,7 @@ function createMarkup(data) {
           <img
             width="62"
             height="19"
-            srcset="${amazonPng} 1x, ${amazonPng2x} 2x"
+            srcset="${amazonPng} 1x, ${amazonPng2x} 2x" 
             src="${amazonPng}"
             alt="Amazon"
           /></a>

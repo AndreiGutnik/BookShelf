@@ -7,6 +7,6 @@ import './js/components/switchThems';
 
 
 import './js/about-book-modal';
-
+import './js/modals';
 
 import './js/components/scrollUp.js';
