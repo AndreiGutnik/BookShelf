@@ -7,18 +7,23 @@ burgerBtn.addEventListener('click', handlerChangeBtnMenu);
 function handlerChangeBtnMenu() {
   const refs = {
     blockAuth: document.querySelector('.block-auth'),
+    sliderUkraine: document.querySelector('.slider-swiper'),
   };
   if (isOpen) {
     iconClose.classList.remove('is-hidden');
     iconBurger.classList.add('is-hidden');
     mobileMenu.classList.remove('is-hidden');
-    refs.blockAuth.style.display = 'block';
+    setTimeout(() => {
+      refs.blockAuth.style.display = 'block';
+    }, 250);
+    refs.sliderUkraine.style.zIndex = -1;
     isOpen = false;
   } else {
     iconClose.classList.add('is-hidden');
     iconBurger.classList.remove('is-hidden');
     mobileMenu.classList.add('is-hidden');
     refs.blockAuth.style.display = 'none';
+    refs.sliderUkraine.style.zIndex = 1;
     isOpen = true;
   }
 }
@@ -41,17 +46,3 @@ function handlerChangeColor(evt) {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
