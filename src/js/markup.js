@@ -1,6 +1,6 @@
 export function createCategoryList(arr) {
   return (
-    '<li class="category__item"><a href="./index.html">All categories</a></li>' +
+    '<li class="category__item">All categories</li>' +
     arr
       .sort((firstTitle, secondTitle) =>
         firstTitle.list_name.localeCompare(secondTitle.list_name)

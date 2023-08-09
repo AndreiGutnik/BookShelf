@@ -35,7 +35,8 @@ async function onCategoryListClick(evt) {
 	if (evt.target.nodeName !== 'LI') {
 		return;
   }
-  if (categoryName === 'All categories') {
+	if (categoryName === 'All categories') {
+		window.location.reload();
     return;
 	}
 	categoryListEl.querySelector('.active').classList.remove('active');
