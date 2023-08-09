@@ -37,11 +37,16 @@ async function onLoadMoreClick(evt) {
     selector: '.load-more',
     isHidden: true,
   });
-  loadMoreBtn.disable();
+	loadMoreBtn.disable();
+	categoryListEl.querySelector('.active').classList.remove('active');  
   try {
     const categoryTitel = evt.target.dataset.category;
+    const child = categoryListEl.childNodes;
+    	[...child]
+        .find(elem => elem.outerText === categoryTitel)
+        .classList.add('active');
     bookService.selectedCategory = categoryTitel;
-		const booksByCategory = await bookService.getBooksByCategory();	
+    const booksByCategory = await bookService.getBooksByCategory();
     categoryChoice.classList.add('is-hidden');
     bookList0.innerHTML = createMarkupBooks(booksByCategory);
 
