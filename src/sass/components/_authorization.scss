@@ -1,9 +1,3 @@
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .auth-logon {
   display: flex;
   display: none;
@@ -53,6 +47,7 @@
 }
 
 .auth-logout {
+  position: absolute;
   display: flex;
   align-items: center;
   padding: 15px 24px;
@@ -235,6 +230,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: calc(18 / 14);
+  margin-left: 0;
   letter-spacing: -0.14px;
   text-transform: uppercase;
   border: none;
@@ -297,8 +293,14 @@
     margin-top: 24px;
   }
   .auth-logout {
-    margin-top: 620px;
-    margin-left: 20px;
+    position: absolute;
+    top: 680px;
+    left: 10px;
+    z-index: -1;
+    transition: top 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    &.is-hidden {
+      top: 0;
+    }
   }
 }
 @media screen and (min-width: 768px) {
@@ -314,9 +316,13 @@
   .auth-logout {
     width: 184px;
     position: absolute;
-    top: 0;
+    top: 50px;
     left: 0;
-    transform: translate(0, 50px);
+    transition: top 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+    &.is-hidden {
+      top: 0;
+    }
     &-user {
       width: 184px;
     }
