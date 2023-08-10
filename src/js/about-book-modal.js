@@ -1,3 +1,70 @@
+// // Імпорт необхідних модулів і зображень
+// import { openModalId } from './modals';
+// import BooksService from './BooksService';
+
+// import amazonPng from '../images/png-icons/shops/amazon-icon1x.png';
+// import amazonPng2x from '../images/png-icons/shops/amazon-icon2x.png';
+// import appleBookPng from '../images/png-icons/shops/applebook-icon1x.png';
+// import appleBookPng2x from '../images/png-icons/shops/applebook-icon2x.png';
+// import bookShopPng from '../images/png-icons/shops/bookshop-icon1x.png';
+// import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
+
+
+
+
+// // Отримання посилань на елементи DOM
+// const allModal = document.querySelector('#allModal');
+// const categorieList = document.querySelector('.categorie-list');
+// const bookList = document.querySelector('.category__books');
+// const storageButton = document.querySelector('.add-storage-button');
+// const removeStorageBtn = document.querySelector('.remove-modal-btn');
+// const storageDescription = document.querySelector('.storage-description');
+
+// const booksService = new BooksService();
+// const homePage = document.querySelector('.home-page');
+
+// // Константа для зберігання даних в локальному сховищі
+// const STORAGE_KEY = 'storage-data';
+
+// // Масив та об'єкт для зберігання даних
+// let storageArr = [];
+// let storageObj = {};
+
+// // Додавання обробників подій
+// storageButton.addEventListener('click', onStorageAdd);
+// removeStorageBtn.addEventListener('click', onStorageDelete);
+// bookList.addEventListener('click', onIdClick);
+// categorieList.addEventListener('click', onIdClick);
+
+// // Функція, яка обробляє клік на елементі списку
+// function onIdClick(e) {
+//   // Якщо клік відбувся на BUTTON, UL, DIV або H3, ігноруємо його
+//   if (
+//     e.target.nodeName === 'BUTTON' ||
+//     e.target.nodeName === 'UL' ||
+//     e.target.nodeName === 'DIV' ||
+//     e.target.nodeName === 'H3'
+//   )
+//     return;
+
+//   // Знаходимо ID ближчого батька <li>
+//   const id = e.target.closest('li').id;
+  
+//   // Виклик функції для відкриття модалки та створення її вмісту
+//   openModalId();
+//   createModal(id);
+// }
+
+
+// homePage.addEventListener('click', onBookClick);
+// function onBookClick(evt) {
+//   if (evt.target.nodeName !== 'DIV' && evt.target.className !== 'all-book-popup') {
+//     return;
+//   }
+//   const boolId = evt.target.dataset.bookid;
+// return bookId;
+// } 
+
 // Імпорт необхідних модулів і зображень
 import { openModalId } from './modals';
 import BooksService from './BooksService';
@@ -8,9 +75,6 @@ import appleBookPng from '../images/png-icons/shops/applebook-icon1x.png';
 import appleBookPng2x from '../images/png-icons/shops/applebook-icon2x.png';
 import bookShopPng from '../images/png-icons/shops/bookshop-icon1x.png';
 import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
-
-
-
 
 // Отримання посилань на елементи DOM
 const allModal = document.querySelector('#allModal');
@@ -35,10 +99,10 @@ storageButton.addEventListener('click', onStorageAdd);
 removeStorageBtn.addEventListener('click', onStorageDelete);
 bookList.addEventListener('click', onIdClick);
 categorieList.addEventListener('click', onIdClick);
+homePage.addEventListener('click', onBookClick);
 
 // Функція, яка обробляє клік на елементі списку
 function onIdClick(e) {
-  // Якщо клік відбувся на BUTTON, UL, DIV або H3, ігноруємо його
   if (
     e.target.nodeName === 'BUTTON' ||
     e.target.nodeName === 'UL' ||
@@ -47,24 +111,19 @@ function onIdClick(e) {
   )
     return;
 
-  // Знаходимо ID ближчого батька <li>
   const id = e.target.closest('li').id;
-  
-  // Виклик функції для відкриття модалки та створення її вмісту
   openModalId();
   createModal(id);
 }
 
-
-homePage.addEventListener('click', onBookClick);
+// Функція для обробки кліка на елементі "all-book-popup"
 function onBookClick(evt) {
   if (evt.target.nodeName !== 'DIV' && evt.target.className !== 'all-book-popup') {
     return;
   }
-  const boolId = evt.target.dataset.bookid;
-return bookId;
-} 
-
+  const bookId = evt.target.dataset.bookid;
+  createModal(bookId);
+}
 
 
 
@@ -94,6 +153,8 @@ async function fetchBookById(bookId) {
       `https://books-backend.p.goit.global/books/${bookId}`
     );
     const data = await response.json();
+
+
 
     // Заповнюємо об'єкт даними зі звернення
     storageObj = {
@@ -217,3 +278,5 @@ function onStorageDelete() {
 
 // Експортуємо функцію для створення модалки
 export { createModal };
+
+
