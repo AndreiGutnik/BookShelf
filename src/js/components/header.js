@@ -14,6 +14,7 @@ burgerBtn.addEventListener('click', handlerChangeBtnMenu);
 function handlerChangeBtnMenu() {
   const refs = {
     blockAuth: document.querySelector('.block-auth'),
+    categoryChoice: document.querySelector('.category-choice'),
   };
   if (isOpen) {
     iconClose.classList.remove('is-hidden');
@@ -23,6 +24,7 @@ function handlerChangeBtnMenu() {
       refs.blockAuth.style.display = 'block';
     }, 250);
     sliderUkraine.style.zIndex = -1;
+    refs.categoryChoice.classList.add('is-hidden');
     document.body.classList.add('pos-fixed');
     isOpen = false;
   } else {
@@ -31,6 +33,7 @@ function handlerChangeBtnMenu() {
     mobileMenu.classList.add('is-hidden');
     refs.blockAuth.style.display = 'none';
     sliderUkraine.style.zIndex = 1;
+    refs.categoryChoice.classList.remove('is-hidden');
     document.body.classList.remove('pos-fixed');
     isOpen = true;
   }
