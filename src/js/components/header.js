@@ -23,6 +23,7 @@ function handlerChangeBtnMenu() {
       refs.blockAuth.style.display = 'block';
     }, 250);
     sliderUkraine.style.zIndex = -1;
+    document.body.classList.add('pos-fixed');
     isOpen = false;
   } else {
     iconClose.classList.add('is-hidden');
@@ -30,6 +31,7 @@ function handlerChangeBtnMenu() {
     mobileMenu.classList.add('is-hidden');
     refs.blockAuth.style.display = 'none';
     sliderUkraine.style.zIndex = 1;
+    document.body.classList.remove('pos-fixed');
     isOpen = true;
   }
 }
