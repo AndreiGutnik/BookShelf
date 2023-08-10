@@ -1,6 +1,6 @@
 // Імпорт необхідних модулів і зображень
 import { openModalId } from './modals';
-
+import BooksService from './BooksService';
 
 import amazonPng from '../images/png-icons/shops/amazon-icon1x.png';
 import amazonPng2x from '../images/png-icons/shops/amazon-icon2x.png';
@@ -9,6 +9,9 @@ import appleBookPng2x from '../images/png-icons/shops/applebook-icon2x.png';
 import bookShopPng from '../images/png-icons/shops/bookshop-icon1x.png';
 import bookShopPng2x from '../images/png-icons/shops/bookshop-icon2x.png';
 
+
+
+
 // Отримання посилань на елементи DOM
 const allModal = document.querySelector('#allModal');
 const categorieList = document.querySelector('.categorie-list');
@@ -16,6 +19,9 @@ const bookList = document.querySelector('.category__books');
 const storageButton = document.querySelector('.add-storage-button');
 const removeStorageBtn = document.querySelector('.remove-modal-btn');
 const storageDescription = document.querySelector('.storage-description');
+
+const booksService = new BooksService();
+const homePage = document.querySelector('.home-page');
 
 // Константа для зберігання даних в локальному сховищі
 const STORAGE_KEY = 'storage-data';
@@ -48,6 +54,20 @@ function onIdClick(e) {
   openModalId();
   createModal(id);
 }
+
+
+homePage.addEventListener('click', onBookClick);
+function onBookClick(evt) {
+  if (evt.target.nodeName !== 'DIV' && evt.target.className !== 'all-book-popup') {
+    return;
+  }
+  const boolId = evt.target.dataset.bookid;
+return bookId;
+} 
+
+
+
+
 
 // Асинхронна функція для створення вмісту модалки за допомогою отриманих даних
 async function createModal(bookId) {

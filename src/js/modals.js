@@ -1,12 +1,9 @@
 
 
 // Выбор элементов модальных окон и других элементов
-const registerModal = document.querySelector('.register-modal');
-const loginModal = document.querySelector('.login-modal');
 const idModal = document.querySelector('.about-book-modal');
 const closeModalBtn = document.querySelector('#modal-close');
-const fireBaseBackdrop = document.querySelector('.fire-base-backdrop');
-const idBackdropModal = document.querySelector('.js-backdrop-modal');
+// const idBackdropModal = document.querySelector('.js-backdrop-modal');
 
 // Функция открытия модального окна по идентификатору
 function openModalId() {
@@ -24,3 +21,4 @@ function closeModalId() {
 closeModalBtn.addEventListener('click', closeModalId);
 
 export { openModalId };
+
