@@ -8,6 +8,13 @@
   }
 }
 
+.pos-fixed {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .header-container {
   position: relative;
   z-index: 1;
@@ -82,7 +89,7 @@
 
 .mobile-menu {
   z-index: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100vh;
   top: 0;
@@ -173,6 +180,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.3;
+  gap: 4px;
   letter-spacing: -0.04em;
   color: var(--font-color-white);
   text-transform: uppercase;

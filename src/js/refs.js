@@ -34,5 +34,17 @@ export default {
   loadMoreBtn: document.querySelector('.load-more'),
   listTitle: document.querySelector('.book-list-title'),
   listTitleSpan: document.querySelector('.book-list-title-span'),
+  sliderUkraine: document.querySelector('.slider-swiper'),
+  homePage: document.querySelector('.home-page'),
+  // Modal
+  allModal: document.querySelector('#allModal'),
+  // categorieList: document.querySelector('.categorie-list'),
+  // bookList: document.querySelector('.category__books'),
+  storageButton: document.querySelector('.add-storage-button'),
+  removeStorageBtn: document.querySelector('.remove-modal-btn'),
+  storageDescription: document.querySelector('.storage-description'),
+  
+	idModal: document.querySelector('.about-book-modal'),
+  closeModalBtn: document.querySelector('#modal-close'),
+  // idBackdropModal: document.querySelector('.js-backdrop-modal'),
 };
-

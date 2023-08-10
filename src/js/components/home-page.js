@@ -23,6 +23,7 @@ async function fetchTopBooks() {
     const topBooks = await bookService.getTopBooks();
     const markup = createMarkupByCategory(topBooks);
 		categoryChoice.insertAdjacentHTML('beforeend', markup);
+		document.querySelector('.main-wrap').classList.remove('is-hidden');
 		Loading.remove();
 		// loader.hide();
     const loadMoreEl = document.querySelector('.load-more');
@@ -35,8 +36,11 @@ async function fetchTopBooks() {
 async function onLoadMoreClick(evt) {
   const loadMoreBtn = new LoadMoreBtn({
     selector: '.load-more',
-    isHidden: true,
+    isHidden: false,
   });
+  if (evt.target.nodeName !== 'BUTTON') {
+		return;
+	}
 	loadMoreBtn.disable();
 	categoryListEl.querySelector('.active').classList.remove('active');  
   try {
@@ -67,7 +71,8 @@ async function onLoadMoreClick(evt) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  Loading.hourglass('Loading...', {
+  document.querySelector('.main-wrap').classList.add('is-hidden');
+	Loading.hourglass('Loading...', {
     messageColor: '#eac645',
     messageFontSize: '30px',
     svgSize: '70px',
