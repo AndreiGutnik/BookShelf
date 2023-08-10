@@ -103,6 +103,20 @@ categorieList.addEventListener('click', onIdClick);
 homePage.addEventListener('click', onBookClick);
 
 // Функція, яка обробляє клік на елементі списку
+// function onIdClick(e) {
+//   if (
+//     e.target.nodeName === 'BUTTON' ||
+//     e.target.nodeName === 'UL' ||
+//     e.target.nodeName === 'DIV' ||
+//     e.target.nodeName === 'H3'
+//   )
+//     return;
+
+//   const id = e.target.closest('li').id;
+//   openModalId();
+//   createModal(id);
+// }
+
 function onIdClick(e) {
   if (
     e.target.nodeName === 'BUTTON' ||
@@ -112,10 +126,16 @@ function onIdClick(e) {
   )
     return;
 
-  const id = e.target.closest('li').id;
+  const listItem = e.target.closest('li');
+  if (!listItem) {
+    return; // Выходим из функции, если listItem равен null
+  }
+
+  const id = listItem.id;
   openModalId();
   createModal(id);
 }
+
 
 // Функція для обробки кліка на елементі "all-book-popup"
 function onBookClick(evt) {
