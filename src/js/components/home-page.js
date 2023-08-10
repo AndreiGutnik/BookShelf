@@ -36,7 +36,7 @@ async function fetchTopBooks() {
 async function onLoadMoreClick(evt) {
   const loadMoreBtn = new LoadMoreBtn({
     selector: '.load-more',
-    isHidden: true,
+    isHidden: false,
   });
   if (evt.target.nodeName !== 'BUTTON') {
 		return;
