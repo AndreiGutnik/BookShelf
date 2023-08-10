@@ -8,6 +8,13 @@
   }
 }
 
+.pos-fixed {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .header-container {
   position: relative;
   z-index: 1;

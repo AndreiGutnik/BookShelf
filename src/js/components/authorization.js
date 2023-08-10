@@ -42,6 +42,7 @@ const {
   userLogout,
   headerCont,
   userLogon,
+  sliderUkraine,
 } = refs;
 
 const KEY_AUTH_IN_STORAGE = 'authorization-form-state';
@@ -56,12 +57,12 @@ if (user) {
   userName.textContent = user;
   userNameBtn.classList.remove('is-hidden');
   userNoneBtn.classList.add('is-hidden');
-  // userLogout.classList.remove('is-hidden');
+  sliderUkraine.style.zIndex = 1;
 } else {
   userName.textContent = 'User';
   userNameBtn.classList.add('is-hidden');
   userNoneBtn.classList.remove('is-hidden');
-  // userLogout.classList.add('is-hidden');
+  sliderUkraine.style.zIndex = -1;
 }
 
 checkAuthStorage();

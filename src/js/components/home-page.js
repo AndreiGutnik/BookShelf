@@ -38,6 +38,9 @@ async function onLoadMoreClick(evt) {
     selector: '.load-more',
     isHidden: true,
   });
+  if (evt.target.nodeName !== 'BUTTON') {
+		return;
+	}
 	loadMoreBtn.disable();
 	categoryListEl.querySelector('.active').classList.remove('active');  
   try {
