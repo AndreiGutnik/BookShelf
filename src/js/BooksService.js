@@ -36,7 +36,7 @@ export default class BooksService {
 	}
 
 	async getBooksById() {
-		const { data } = await axios.get(`${BASE_URL}${this.bookId}`);
+		const  {data} = await axios.get(`${BASE_URL}${this.bookId}`);
     return data;
 	}
 
