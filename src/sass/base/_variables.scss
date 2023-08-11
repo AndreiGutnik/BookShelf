@@ -30,16 +30,9 @@ body.light {
   --color-text-categor-hover: #4f2ee8;
   --color-line-scroll: #e0e0e0;
   // ===========/Category============================================
-  --background-color1: #f6f6f6;
-  --font-color: #111111;
-  --background-checkbox-theme: linear-gradient(
-    180deg,
-    #4f2ee8 0%,
-    #dcdcdc 100%
-  );
   --color-pagination-fill: #b4afaf;
   --filter: brightness(0) invert(0);
-	--color-filter: brightness(0) invert(0);
+	--color-filter: brightness(1) invert(0);
 
 }
 body.dark {
@@ -64,13 +57,6 @@ body.dark {
   --color-text-categor-hover: #eac645;
   --color-line-scroll: rgba(17, 17, 17, 0.6);
   // ===========/Category============================================
-  --background-color1: #202024;
-  --font-color: #ffffff;
-  --background-checkbox-theme: linear-gradient(
-    180deg,
-    #4f2ee8 0%,
-    #686868 100%
-  );
   --color-pagination-fill: #ffffff;
   --filter: brightness(0) invert(1);
 	--color-filter: invert(1);
