@@ -3,7 +3,7 @@ const shoppingListContainer = document.querySelector(
 );
 if (localStorage.getItem('storage-data')) {
   const shoppingListJSON = localStorage.getItem('storage-data');
-  console.log(shoppingListJSON);
+
   let shoppingList = JSON.parse(shoppingListJSON);
 
   const shoplistBooks = shoppingList.map(makeShoplistMarkup);
@@ -74,6 +74,7 @@ if (localStorage.getItem('storage-data')) {
   // Add trash to each element
 
   const shoplistTrash = document.querySelectorAll('.shoplist-trash');
+  console.log(shoplistTrash);
   shoplistTrash.forEach(trash => {
     trash.addEventListener('click', removesBookFromShoppingList);
   });
