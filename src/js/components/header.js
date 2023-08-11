@@ -23,7 +23,7 @@ function handlerChangeBtnMenu() {
     setTimeout(() => {
       refs.blockAuth.style.display = 'block';
     }, 250);
-    sliderUkraine.style.zIndex = -1;
+    // sliderUkraine.style.zIndex = -1;
     refs.categoryChoice.classList.add('is-hidden');
     document.body.classList.add('pos-fixed');
     isOpen = false;
@@ -32,7 +32,7 @@ function handlerChangeBtnMenu() {
     iconBurger.classList.remove('is-hidden');
     mobileMenu.classList.add('is-hidden');
     refs.blockAuth.style.display = 'none';
-    sliderUkraine.style.zIndex = 1;
+    // sliderUkraine.style.zIndex = 1;
     refs.categoryChoice.classList.remove('is-hidden');
     document.body.classList.remove('pos-fixed');
     isOpen = true;
