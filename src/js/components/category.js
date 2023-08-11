@@ -3,13 +3,8 @@ import { createCategoryList, createMarkupBooks } from '../markup';
 import refs from '../refs';
 import onError from '../error';
 
-const {
-  categoryListEl,
-  bookList0,
-  categoryChoice,
-  listTitle,
-  listTitleSpan,
-} = refs;
+const { categoryListEl, bookList0, categoryChoice, listTitle, listTitleSpan } =
+  refs;
 
 const booksService = new BooksService();
 
@@ -32,19 +27,19 @@ async function fetchCategoryList() {
 
 async function onCategoryListClick(evt) {
   const categoryName = evt.target.textContent;
-	if (evt.target.nodeName !== 'LI') {
-		return;
-  }
-	if (categoryName === 'All categories') {
-		window.location.reload();
+  if (evt.target.nodeName !== 'LI') {
     return;
-	}
-	categoryListEl.querySelector('.active').classList.remove('active');
+  }
+  if (categoryName === 'All categories') {
+    window.location.reload();
+    return;
+  }
+  categoryListEl.querySelector('.active').classList.remove('active');
   try {
-		booksService.selectedCategory = categoryName;
+    booksService.selectedCategory = categoryName;
     const booksByCategory = await booksService.getBooksByCategory();
     evt.target.classList.add('active');
-		categoryChoice.classList.add('is-hidden');
+    categoryChoice.classList.add('is-hidden');
     bookList0.innerHTML = createMarkupBooks(booksByCategory);
 
     const lastWordOfCategory = categoryName.slice(

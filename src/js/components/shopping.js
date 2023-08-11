@@ -1,8 +1,9 @@
 const shoppingListContainer = document.querySelector(
   '.shopping-list-empty-page'
 );
-if (localStorage.getItem('shoppingList')) {
-  const shoppingListJSON = localStorage.getItem('shoppingList');
+if (localStorage.getItem('storage-data')) {
+  const shoppingListJSON = localStorage.getItem('storage-data');
+  console.log(shoppingListJSON);
   let shoppingList = JSON.parse(shoppingListJSON);
 
   const shoplistBooks = shoppingList.map(makeShoplistMarkup);
