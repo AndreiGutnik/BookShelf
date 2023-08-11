@@ -1,8 +1,8 @@
 .home-page {
-	margin-top: 40px;
+  margin-top: 40px;
 
-	@media screen and (min-width: 768px) {
-		margin-top: 100px;
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -41,6 +41,7 @@
   gap: 20px;
   overflow: hidden;
 }
+
 @media screen and (min-width: 768px) {
   .top-books-list {
     gap: 25px;
@@ -160,11 +161,13 @@ button {
   font-size: 14px;
   font-family: 'DM Sans Bold';
   line-height: 1.28;
-  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
 }
 .load-more:hover,
 .load-more:focus {
+  scale: 0.95;
   background-color: #4f2ee8;
   color: #ffffff;
 }
@@ -195,37 +198,38 @@ button {
   color: #111;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: -.04em;
+  letter-spacing: -0.04em;
   background-color: #eac645;
   border-radius: 0 0 8px 8px;
   padding: 26px 52px;
   font-size: 14px;
   font-family: 'DM Sans Medium';
   line-height: 18px;
-  transition: opacity 250ms cubic-bezier(.4,0,.2,1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   position: absolute;
   bottom: 0;
   transform: translateY(100%);
 }
 
 .thumb:hover .all-book-popup,
- .thumb:focus .all-book-popup{
+.thumb:focus .all-book-popup {
   visibility: visible;
-opacity: 1;
-transform: translateY(0);
- } 
-  @media screen and (min-width: 768px) {
-    .thumb .book-popup{
-    bottom: 95px;}
+  opacity: 1;
+  transform: translateY(0);
+}
+@media screen and (min-width: 768px) {
+  .thumb .book-popup {
+    bottom: 95px;
   }
+}
 
- @media screen and (min-width: 768px) {
-  .all-book-popup{ 
+@media screen and (min-width: 768px) {
+  .all-book-popup {
     width: 218px;
   }
- }
- @media (min-width: 1440px){
-  .all-book-popup{ 
+}
+@media (min-width: 1440px) {
+  .all-book-popup {
     width: 180px;
   }
 }

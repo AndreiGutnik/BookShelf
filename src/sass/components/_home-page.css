@@ -2,17 +2,20 @@
   width: 375px;
   padding: 0 20px;
   margin: 0 auto;
-  overflow: hidden;}
-  @media screen and (min-width: 768px) {
-.home-page-container{ 
-  width: 768px;
-  padding: 0 32px;}
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .home-page-container {
+    width: 768px;
+    padding: 0 32px;
   }
-  @media screen and (min-width: 1440px) {
- .home-page-container{  
-  width: 996px;
-  padding: 0;}
+}
+@media screen and (min-width: 1440px) {
+  .home-page-container {
+    width: 996px;
+    padding: 0;
   }
+}
 
 .books-title {
   color: var(--font-color);
@@ -22,43 +25,45 @@
   line-height: 1.8;
   margin-bottom: 40px;
   text-align: left;
-  }
-  .book-list-title-span {
-    color:var(--color-violet);
-    font-family: 'DM Sans Bold', sans-serif;
+}
+.book-list-title-span {
+  color: var(--color-violet);
+  font-family: 'DM Sans Bold', sans-serif;
   letter-spacing: -1.28px;
   font-size: 32px;
   line-height: 1.8;
   margin-bottom: 40px;
-  }
+}
+.top-books-list {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  gap: 20px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
   .top-books-list {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 0 auto;
-    gap: 20px;
-    overflow: hidden;
+    gap: 25px;
   }
-  @media screen and (min-width: 768px) {
-    .top-books-list{
-      gap: 25px;}
+}
+@media screen and (min-width: 1440px) {
+  .top-books-list {
+    width: 996px;
+    gap: 24px;
   }
-  @media screen and (min-width: 1440px) {
-    .top-books-list{
-      width: 996px;
-      gap: 24px;}
-  } 
-  .thumb{
-    width: 335px;
-    height: 485px;
-   }
-   @media screen and (min-width: 768px){
-    .thumb {
+}
+.thumb {
+  width: 335px;
+  height: 485px;
+}
+@media screen and (min-width: 768px) {
+  .thumb {
     width: 218px;
     height: 315px;
-    }
   }
-  @media screen and (min-width: 1440px) {
-   .thumb{ 
+}
+@media screen and (min-width: 1440px) {
+  .thumb {
     width: 180px;
     height: 256px;
   }
@@ -72,147 +77,154 @@
 }
 .card {
   margin-bottom: 40px;
- }
- @media screen and (min-width: 768px){
-  .card{
+}
+@media screen and (min-width: 768px) {
+  .card {
     display: flex;
     flex-direction: row;
     margin-bottom: 0;
     row-gap: 25px;
     column-gap: 40px;
-   }
   }
- 
+}
+
 button {
   display: block;
   margin-left: auto;
 }
-   .book-list-name {
-    text-overflow: ellipsis;
-     white-space: nowrap;
-     letter-spacing: -.04em;
-     text-transform: uppercase;
-     color: var(--font-color);
-     margin-top: 14px;
-     font-size: 16px;
- font-family: 'DM Sans Bold';
-     max-width: 335px;
-     line-height: 1.125;
-     overflow: hidden;}
-     .book-list-author {
-              letter-spacing: -.04em;
-              color: var(--font-color-grey);
-              font-size: 12px;
-              font-family: 'DM Sans Italic';
-              margin-top: 4px;
-              line-height: 1.16;
-            }
-     @media screen and (min-width: 768px){
-     .book-list-name{
-      max-width: 218px;}
-      .book-list-author{
-        max-width: 218px;}
-    }
-    @media (min-width: 1440px){
-      .book-list-name,
-      .book-list-author{
-        max-width: 180px;}
-    }
-   
-    .book-list-category {
-      margin-bottom: 18px;
-      text-align: left;
-       color: #b4afaf;
-       font-size: 14px;
-       line-height: 1.28;
-       letter-spacing: 0.42px;
-       text-transform: uppercase;}  
-     .book-list-category:not(:first-child) {
-        margin-top: 40px;
-      }
-      .top-book-list-item{
-        position: relative;
-      }
-     .load-more{
-       cursor: pointer;
-       letter-spacing: -.01em;
-       text-transform: uppercase;
-       min-width: 124px;
-       height: 46px;
-       border: 2px solid #4f2ee8;
-       border-radius: 40px;
-       flex-flow: row;
-       align-items: flex-start;
-       gap: 10px;
-       margin-left: auto;
-       margin-top: 8px;
-       padding: 14px 28px;
-       font-size: 14px;
-       line-height: 1.28;
-       transition: background-color .5s cubic-bezier(0.4, 0, 0.2, 1);
-       display: flex;
-     }
-     .load-more:hover,
-     .load-more:focus{
-      background-color: #4F2EE8;
-      color: #FFFFFF;
-     }
-     @media screen and (min-width: 768px){
-      .load-more{
-        margin-top: 20px;
-      }
-     }
-     @media screen and (min-width: 768px) {
-      .books0{ 
-        display: flex;
-        row-gap: 40px;
-        flex-wrap: wrap;
-        column-gap: 25px;
-      }
-     }
-     @media (min-width: 1440px){
-      .books0{
-      column-gap: 24px;}
-    }
-     .all-book-popup {
-      height: 70px;
-      width: 100%;
-      opacity: 0;
-      visibility: hidden;
-      color: #111;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: -.04em;
-      background-color: #eac645;
-      border-radius: 0 0 8px 8px;
-      padding: 26px 52px;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 18px;
-      transition: opacity 1s cubic-bezier(.4,0,.2,1);
-      position: absolute;
-      bottom: 55px;
-      transform: translateY(100%);
+.book-list-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--font-color);
+  margin-top: 14px;
+  font-size: 16px;
+  font-family: 'DM Sans Bold';
+  max-width: 335px;
+  line-height: 1.125;
+  overflow: hidden;
+}
+.book-list-author {
+  letter-spacing: -0.04em;
+  color: var(--font-color-grey);
+  font-size: 12px;
+  font-family: 'DM Sans Italic';
+  margin-top: 4px;
+  line-height: 1.16;
+}
+@media screen and (min-width: 768px) {
+  .book-list-name {
+    max-width: 218px;
   }
-  
-  .top-book-list-item:hover .all-book-popup,
-     .top-book-list-item:focus .all-book-popup{
-      visibility: visible;
+  .book-list-author {
+    max-width: 218px;
+  }
+}
+@media (min-width: 1440px) {
+  .book-list-name,
+  .book-list-author {
+    max-width: 180px;
+  }
+}
+
+.book-list-category {
+  margin-bottom: 18px;
+  text-align: left;
+  color: #b4afaf;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+.book-list-category:not(:first-child) {
+  margin-top: 40px;
+}
+.top-book-list-item {
+  position: relative;
+}
+.load-more {
+  cursor: pointer;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  min-width: 124px;
+  height: 46px;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  flex-flow: row;
+  align-items: flex-start;
+  gap: 10px;
+  margin-left: auto;
+  margin-top: 8px;
+  padding: 14px 28px;
+  font-size: 14px;
+  line-height: 1.28;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+}
+.load-more:hover,
+.load-more:focus {
+  background-color: #4f2ee8;
+  color: #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .load-more {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .books0 {
+    display: flex;
+    row-gap: 40px;
+    flex-wrap: wrap;
+    column-gap: 25px;
+  }
+}
+@media (min-width: 1440px) {
+  .books0 {
+    column-gap: 24px;
+  }
+}
+.all-book-popup {
+  height: 70px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  color: #111;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  background-color: #eac645;
+  border-radius: 0 0 8px 8px;
+  padding: 26px 52px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  bottom: 55px;
+  transform: translateY(100%);
+}
+
+.top-book-list-item:hover .all-book-popup,
+.top-book-list-item:focus .all-book-popup {
+  visibility: visible;
   opacity: 1;
   transform: translateY(0);
-     } 
-      @media screen and (min-width: 768px) {
-        .top-book-list-item:last-child .book-popup{
-        bottom: 95px;}
-      }
-    
-     @media screen and (min-width: 768px) {
-      .all-book-popup{ 
-        width: 218px;
-      }
-     }
-     @media (min-width: 1440px){
-      .all-book-popup{ 
-        width: 180px;
-      }
-    }
+}
+@media screen and (min-width: 768px) {
+  .top-book-list-item:last-child .book-popup {
+    bottom: 95px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .all-book-popup {
+    width: 218px;
+  }
+}
+@media (min-width: 1440px) {
+  .all-book-popup {
+    width: 180px;
+  }
+}
