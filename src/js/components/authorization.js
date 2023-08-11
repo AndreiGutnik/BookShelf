@@ -1,7 +1,7 @@
 const throttle = require('lodash.throttle');
 import refs from '../refs';
 import onError from '../error';
-// import onMessageSuccess from '../message';
+import onMessageSuccess from './message';
 
 import { initializeApp } from 'firebase/app';
 import {
@@ -57,12 +57,12 @@ if (user) {
   userName.textContent = user;
   userNameBtn.classList.remove('is-hidden');
   userNoneBtn.classList.add('is-hidden');
-  sliderUkraine.style.zIndex = 1;
+  // sliderUkraine.style.zIndex = 1;
 } else {
   userName.textContent = 'User';
   userNameBtn.classList.add('is-hidden');
   userNoneBtn.classList.remove('is-hidden');
-  sliderUkraine.style.zIndex = -1;
+  // sliderUkraine.style.zIndex = -1;
 }
 
 checkAuthStorage();
@@ -134,29 +134,29 @@ function onClickAuthSubmit(evt) {
         onMessageSuccess(userToStorage);
       })
       .catch(error => {
-        onMessageSuccess('Stephan');
-        // const errorCode = error.code;
-        // onError(errorCode);
+        // onMessageSuccess('Stephan');
+        const errorCode = error.code;
+        onError(errorCode);
         // const errorMessage = error.message;
         // console.log(errorCode);
         // console.log(errorMessage);
         // ..
       });
-    onAuthStateChanged(auth, user => {
-      // console.log(user);
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
-        const uid = user.uid;
-        // console.log(uid);
-        // alert('User in');
-        // ...
-      } else {
-        // User is signed out
-        // alert('User out');
-        // ...
-      }
-    });
+    // onAuthStateChanged(auth, user => {
+    //   // console.log(user);
+    //   if (user) {
+    //     // User is signed in, see docs for a list of available properties
+    //     // https://firebase.google.com/docs/reference/js/auth.user
+    //     const uid = user.uid;
+    //     // console.log(uid);
+    //     // alert('User in');
+    //     // ...
+    //   } else {
+    //     // User is signed out
+    //     // alert('User out');
+    //     // ...
+    //   }
+    // });
   }
   if (switchFromStorage === 'in') {
     signInWithEmailAndPassword(
@@ -177,26 +177,27 @@ function onClickAuthSubmit(evt) {
         headerCont.classList.toggle('is-hidden');
       })
       .catch(error => {
-        const errorCode = error.code;
-        onError(errorCode);
+        onMessageSuccess('Stephan');
+        // const errorCode = error.code;
+        // onError(errorCode);
         // const errorMessage = error.message;
         // console.log(errorCode);
         // console.log(errorMessage);
       });
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
-        const uid = user.uid;
-        // console.log(uid);
-        // alert('User in');
-        // ...
-      } else {
-        // User is signed out
-        // alert('User out');
-        // ...
-      }
-    });
+    // onAuthStateChanged(auth, user => {
+    //   if (user) {
+    //     // User is signed in, see docs for a list of available properties
+    //     // https://firebase.google.com/docs/reference/js/auth.user
+    //     const uid = user.uid;
+    //     // console.log(uid);
+    //     // alert('User in');
+    //     // ...
+    //   } else {
+    //     // User is signed out
+    //     // alert('User out');
+    //     // ...
+    //   }
+    // });
   }
 }
 
