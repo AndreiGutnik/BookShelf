@@ -197,18 +197,18 @@
   }
 }
 
-.modal-form-auth-field-inputhover .modal-form-auth-field-icon {
+.modal-form-auth-field-input:hover .modal-form-auth-field-icon {
   stroke: var(--font-color-violet);
 }
-.modal-form-auth-field-input:is(hover, focus)::placeholder {
+.modal-form-auth-field-input:is(:hover, :focus)::placeholder {
   color: var(--font-color-violet);
 }
 
-.modal-form-auth-field-input:is(hover, focus) {
+.modal-form-auth-field-input:is(:hover, :focus) {
   border-color: var(--font-color-violet);
 }
 
-.modal-form-auth .pos-authfocus-within .modal-form-auth-field-icon {
+.modal-form-auth .pos-auth:focus-within .modal-form-auth-field-icon {
   stroke: var(--font-color-violet);
 }
 
@@ -235,7 +235,7 @@
   text-transform: uppercase;
   border: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:is(hover, focus) {
+  &:is(:hover, :focus) {
     color: var(--font-color-violet);
     text-decoration-line: underline;
     outline: transparent;
@@ -261,7 +261,7 @@
       color 250ms cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
       font-size 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    &:is(hover, focus) {
+    &:is(:hover, :focus) {
       color: #aaaaaa;
     }
     &:active {
