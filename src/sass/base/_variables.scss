@@ -38,8 +38,8 @@ body.light {
     #dcdcdc 100%
   );
   --color-pagination-fill: #b4afaf;
+	--color-filter: brightness(1) invert(0);
 }
-
 body.dark {
   --background-color: #000000;
   --background-color1: #202024;
@@ -70,4 +70,5 @@ body.dark {
     #686868 100%
   );
   --color-pagination-fill: #ffffff;
+	--color-filter: invert(1);
 }
