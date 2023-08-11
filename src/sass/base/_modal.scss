@@ -1,30 +1,3 @@
-// :root {
-//     --color-violet: #4F2EE8;
-//     --color-yellow: #EAC645;
-//     --font-color-white: #ffffff;
-//     --font-color-grey: #6c6c6c;
-//     --font-color-violet: #4F2EE8;
-//     --font-color-yellow: #EAC645;
-// }
-
-// body.light {
-//     --background-color: #ffffff;
-//     --background-color1: #f6f6f6;
-//     --font-color: #111111;
-//     --background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #DCDCDC 100%);
-//     --color-pagination-fill: #B4AFAF;
-// }
-
-// body.dark {
-//     --background-color: #000000;
-//     --background-color1: #202024;
-//     --font-color: #ffffff;
-//     --background-checkbox-theme: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
-//     --color-pagination-fill: #ffffff;
-// }
-
-// minnikov  start scss
-
 $icons-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 
 .js-backdrop-modal {
@@ -64,11 +37,11 @@ $icons-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 
 .about-book-modal {
   font-family: 'DM Sans Regular';
-  position: relative;
+  position: fixed;
   top: 430px;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: fixes;
+  display: inline-block;
   width: 335px;
   padding: 40px 24px;
   border: 2px solid var(--font-color);
@@ -208,7 +181,7 @@ button {
 @media (min-width: 768px) {
   .about-book-modal {
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 50%;
     padding: 40px;
     height: 500px;
@@ -233,6 +206,10 @@ button {
     width: 270px;
     left: 256px;
     top: 30px;
+  }
+
+  .modal-id-buttons {
+    bottom: 60px;
   }
 
   .storage-description {

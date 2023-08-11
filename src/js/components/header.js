@@ -38,27 +38,3 @@ function handlerChangeBtnMenu() {
     isOpen = true;
   }
 }
-//////////////////////Перемикач жовтого фону для меню навігації /////////////////////
-homeLink.addEventListener('click', handlerChangeColor);
-shoppingList.addEventListener('click', handlerChangeColor);
-function handlerChangeColor(evt) {
-  // evt.preventDefault();
-  const hasCurrentColorClass = evt.target.classList.contains('current-color');
-  if (evt.target === homeLink) {
-    if (!hasCurrentColorClass) {
-      // Додаємо клас current-color, якщо його немає
-      homeLink.classList.add('current-color');
-      shoppingList.classList.remove('current-color');
-    }
-  } else if (evt.target === shoppingList) {
-    console.log(evt.target);
-    console.log(hasCurrentColorClass);
-    if (!hasCurrentColorClass) {
-      console.log(shoppingList);
-      console.log(homeLink);
-      // Додаємо клас current-color, якщо його немає
-      shoppingList.classList.add('current-color');
-      homeLink.classList.remove('current-color');
-    }
-  }
-}

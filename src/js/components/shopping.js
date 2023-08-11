@@ -1,8 +1,9 @@
+const BOOKS_IN_STORAGE = 'storage-data';
 const shoppingListContainer = document.querySelector(
   '.shopping-list-empty-page'
 );
-if (localStorage.getItem('storage-data')) {
-  const shoppingListJSON = localStorage.getItem('storage-data');
+if (localStorage.getItem(BOOKS_IN_STORAGE)) {
+  const shoppingListJSON = localStorage.getItem(BOOKS_IN_STORAGE);
 
   let shoppingList = JSON.parse(shoppingListJSON);
 
@@ -74,7 +75,7 @@ if (localStorage.getItem('storage-data')) {
   // Add trash to each element
 
   const shoplistTrash = document.querySelectorAll('.shoplist-trash');
-  console.log(shoplistTrash);
+
   shoplistTrash.forEach(trash => {
     trash.addEventListener('click', removesBookFromShoppingList);
   });
@@ -84,7 +85,7 @@ if (localStorage.getItem('storage-data')) {
   function removesBookFromShoppingList(event) {
     const id = event.target.closest('.shoplist-book-container').dataset.id;
     shoppingList = shoppingList.filter(book => book.id !== id);
-    localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+    localStorage.setItem(BOOKS_IN_STORAGE, JSON.stringify(shoppingList));
     newShoppingListContainer.removeChild(
       event.target.closest('.shoplist-book-container')
     );

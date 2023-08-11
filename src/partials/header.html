@@ -13,14 +13,14 @@
         <ul class="menu-container">
           <li>
             <a
-              class="home-link current-color js-home-link"
+              class="home-link js-home-link main-header-link"
               href="/src/index.html"
               >Home</a
             >
           </li>
           <li>
             <a
-              class="shoping-link js-shopping-list"
+              class="shoping-link js-shopping-list main-header-link"
               href="/src/shopping-list.html"
               >Shopping list
               <svg class="bag-icon" width="20" height="20">
@@ -62,7 +62,7 @@
             <a class="home-link current-color" href="./index.html">Home</a>
           </li>
           <li>
-            <a class="shoping-link" href="#"
+            <a class="shoping-link" href="/src/shopping-list.html"
               >Shopping list
               <svg class="bag-icon" width="20" height="20">
                 <use href="/src/images/icons.svg#bag"></use>
@@ -75,3 +75,19 @@
     <img class="book-menu-img" src="/src/images/books.png" alt="book" />
   </div>
 </header>
+<script>
+  const linksAll = document.querySelectorAll('.main-header-link');
+  const homeLink = document.querySelector('.home-link');
+  const shoppingLink = document.querySelector('.shoping-link');
+
+  linksAll.forEach(element => {
+    if (document.title === 'Book Shelf') {
+      shoppingLink.classList.remove('current-color');
+      homeLink.classList.add('current-color');
+    } else if (document.title === 'Shopping List') {
+      console.log(document.title);
+      shoppingLink.classList.add('current-color');
+      homeLink.classList.remove('current-color');
+    }
+  });
+</script>

@@ -25,7 +25,7 @@
   }
 
   .title_shopping_list_span {
-    color: var(--text-color-title-violet);
+    color: var(--font-color-violet);
   }
 
   .shopping-list-empty-page {
@@ -196,6 +196,7 @@
     background-size: 100%;
     width: 32px;
     height: 11px;
+    filter: var(--filter);
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -317,7 +318,7 @@
   }
 
   .title_shopping_list_span {
-    color: var(--text-color-title-violet);
+    color: var(--font-color-violet);
   }
 
   .shopping-list-empty-page {
@@ -478,6 +479,7 @@
     background-size: 100%;
     width: 48px;
     height: 15px;
+    filter: var(--filter);
   }
 
   @media (min-device-pixel-ratio: 2),

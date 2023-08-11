@@ -62,8 +62,6 @@ async function createModal(bookId) {
 
 // Функція, що заповнює об'єкт даними зі звернення
 function createStorageObject(data) {
-  // storageObj = {};
-  console.log(data);
   storageObj = {
     book_image: data.book_image,
     title: data.title,
