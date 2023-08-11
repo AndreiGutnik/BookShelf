@@ -121,3 +121,8 @@ if (localStorage.getItem(BOOKS_IN_STORAGE)) {
     }
   }
 }
+const booksOnPage = 3;
+const storageArr = JSON.parse(localStorage.getItem(BOOKS_IN_STORAGE));
+const booksInList = storageArr.length;
+
+export { booksOnPage, booksInList };
