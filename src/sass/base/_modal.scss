@@ -26,48 +26,10 @@
 
 // minnikov  start scss 
 
-$primary-colour: #111111;
-$secondary-colour: #FFFFFF;
-$paragraph-colour: #B4AFAF;
 
-$main-brand-colour: #4f2ee8;
-$additional-brand-colour: #eac645;
-
-$main-background: #F6F6F6;
-$light-theme-background: #ffffff;
-$dark-theme-background: #111111;
-
-$modal-light-background: #f6f6f6;
-$modal-dark-background: #202024;
-
-$hover-light-theme: #4f2ee8;
-$hover-dark-theme: #eac645;
-
-$gradient: radial-gradient(183.6% 183.01% at 59.76% -23.42%,
-        #4f2ee8 18.03%,
-        #ffffff 100%);
-$shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
 $icons-shadow: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 
-// breakpoints
-$phoneMax: 374.9px;
-$phoneMin: 375px;
 
-$tabletMax: 1023.9px;
-$tabletMin: 768px;
-
-$desktopMax: 1440px;
-$desktopMin: 1024px;
-
-// padding-container
-$paddingPhone: 20px;
-$paddingTablet: 32px;
-$paddingDt: 24px;
-
-// transition
-$cubic: cubic-bezier(0.4, 0, 0.2, 1);
-
-// minnikov  the end scss 
 
 .js-backdrop-modal {
     position: fixed;
@@ -106,9 +68,7 @@ $cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .about-book-modal {
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'DM Sans Regular';
     position: relative;
     top: 430px;
     left: 50%;
@@ -116,9 +76,9 @@ $cubic: cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-block;
     width: 335px;
     padding: 40px 24px;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid var(--font-color);
     border-radius: 18px;
-    background-color: #fff;
+    background-color: var(--background-color);
     height: 806px;
 }
 
@@ -137,11 +97,11 @@ button {
     right: 7px;
     border: none;
     cursor: pointer;
+    fill: var(--font-color);
     transition: fill 0.3s ease;
-    background: $modal-light-background;
 
     &:hover {
-        fill: $hover-light-theme;
+        fill: var(--font-color-violet);
     }
 }
 
@@ -152,17 +112,17 @@ button {
 }
 
 .title-about-book-modal {
-    font-weight: 700;
+    font-family: 'DM Sans Bold';
     font-size: 16px;
     line-height: 18px;
     margin-top: 14px;
 }
 
 .author-about-book-modal {
-    font-style: italic;
+    font-family: 'DM Sans Italic';
     font-size: 12px;
     line-height: 14px;
-    color: $paragraph-colour;
+    color:  var(--font-color-grey);
     margin-top: 4px;
 
     width: 287px;
@@ -201,7 +161,7 @@ button {
     left: 50%;
 
     transform: translateX(-50%);
-    border: 2px solid $hover-light-theme;
+    border: 2px solid var(--color-violet);
     border-radius: 40px;
     font-weight: 700;
     font-size: 13px;
@@ -212,18 +172,20 @@ button {
     transition: background, color 0.3s ease;
 
     &:hover {
-        background: $hover-light-theme;
-        color: $secondary-colour;
+        background: var(--color-violet);
+        color: var(--background-color);
         cursor: pointer;
     }
 }
 
 .add-storage-button {
     width: 221px;
+    color: var(--font-color);
 }
 
 .storage-delete-button {
     width: 279px;
+    color: var(--font-color);
 }
 
 .remove-modal-btn {
