@@ -39,7 +39,7 @@ function onBookClick(evt) {
     evt.target.className !== 'all-book-popup'
   ) {
     return;
-	}	
+  }
   const booklId = evt.target.dataset.bookid;
   openModalId();
   createModal(booklId);
@@ -52,8 +52,8 @@ async function createModal(bookId) {
     booksService.bookId = bookId;
     const data = await booksService.getBooksById();
     createStorageObject(data);
-		storageCheck();
-		createMarkup(data);		
+    storageCheck();
+    createMarkup(data);
     // return data;
   } catch (err) {
     onError(err);
@@ -63,29 +63,31 @@ async function createModal(bookId) {
 // Функція, що заповнює об'єкт даними зі звернення
 function createStorageObject(data) {
   // storageObj = {};
-	storageObj = {
+  console.log(data);
+  storageObj = {
     book_image: data.book_image,
     title: data.title,
     author: data.author,
     marketAmazon: data.buy_links[0].url,
     marketAppleBooks: data.buy_links[1].url,
     marketBookshop: data.buy_links[4].url,
+    description: data.description,
     list_name: data.list_name,
     id: data._id,
-	};	
+  };
 }
 
 // Функція для перевірки наявності даних у локальному сховищі
 function storageCheck() {
   const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
-	const idToFind = storageObj.id;	
+  const idToFind = storageObj.id;
 
   if (!storageArr || storageArr.length === 0) {
     storageButton.style.display = 'block';
     removeStorageBtn.style.display = 'none';
     return;
   } else {
-		const objToFind = storageArr.find(obj => obj.id === idToFind);		
+    const objToFind = storageArr.find(obj => obj.id === idToFind);
     if (!objToFind) {
       storageButton.style.display = 'block';
       removeStorageBtn.style.display = 'none';
@@ -148,8 +150,8 @@ function createMarkup(data) {
 
 // Функція для додавання даних до локального сховища
 function onStorageAdd() {
-	const realStorageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));	
-	const dataToSave = storageObj;	
+  const realStorageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  const dataToSave = storageObj;
 
   if (!realStorageArr || realStorageArr.length === 0) {
     storageArr2.push(dataToSave);
@@ -170,8 +172,8 @@ function onStorageDelete() {
 
   const idToDelete = storageObj.id;
   const storageArr = JSON.parse(localStorage.getItem(STORAGE_KEY));
-	const indexToDelete = storageArr.findIndex(obj => obj.id === idToDelete);
-	storageArr.splice(indexToDelete, 1);
+  const indexToDelete = storageArr.findIndex(obj => obj.id === idToDelete);
+  storageArr.splice(indexToDelete, 1);
   storageArr2.splice(indexToDelete, 1);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(storageArr));
   storageCheck();

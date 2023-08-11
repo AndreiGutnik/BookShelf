@@ -42,6 +42,7 @@ function handlerChangeBtnMenu() {
 homeLink.addEventListener('click', handlerChangeColor);
 shoppingList.addEventListener('click', handlerChangeColor);
 function handlerChangeColor(evt) {
+  // evt.preventDefault();
   const hasCurrentColorClass = evt.target.classList.contains('current-color');
   if (evt.target === homeLink) {
     if (!hasCurrentColorClass) {
@@ -50,7 +51,11 @@ function handlerChangeColor(evt) {
       shoppingList.classList.remove('current-color');
     }
   } else if (evt.target === shoppingList) {
+    console.log(evt.target);
+    console.log(hasCurrentColorClass);
     if (!hasCurrentColorClass) {
+      console.log(shoppingList);
+      console.log(homeLink);
       // Додаємо клас current-color, якщо його немає
       shoppingList.classList.add('current-color');
       homeLink.classList.remove('current-color');
